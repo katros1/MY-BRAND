@@ -1,0 +1,87 @@
+body{
+    display: flex;
+    justify-content: space-between;
+    background-color: #1B1D1D;
+    padding: 0px;
+}
+.logo{
+    width: 100px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    
+}
+.toolBar{
+    width: 100px;
+    color: white;
+    font-size: 30px;
+    border-bottom: 1px solid red;
+    border-color: #969797;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+.nav-bar{
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #181A19;
+    height: 100%;
+
+}
+.container{
+    
+    left: 300px; -----------
+    top: 100px;
+    position: absolute;
+    font-size: 80px;
+    color: white;
+}
+.button{
+    width: 220px;
+    height: 78px;
+    border-radius: 20px;
+    color: #33A69F;
+    border-color: #33A69F;
+    background-color: #1B1D1D;
+    font-size: 30px;
+}
+.about{
+    left: 300px;
+    top: 100px;
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    padding-right:500px;
+
+}
+.heading{
+    color: #2C9C95;
+    font-size: 80px;
+}
+.foot{
+    color: #2C9C95; 
+}
+.wallpaper{
+    padding-right: 70px;
+    border-radius: 10px;
+    padding-top: 140px;       
+    height: 400px;
+    width: 390px;
+}
+.logos{
+    padding-right: 60px;
+    border-radius: 10px;
+    padding-top: 140px;       
+    height: 400px;
+    width: 390px;
+}
+.headings{
+    color: white;
+    left: 300px;
+    top: 100px;
+    position: absolute;
+    font-size: 20px;
+    padding-right:500px;
+
+}
