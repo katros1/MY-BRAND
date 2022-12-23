@@ -13,10 +13,11 @@ body{
 }
 .toolBar{
     width: 100px;
-    color: white;
-    font-size: 30px;
+    height: 60px;
+    color: rgba(255, 255, 255, 0.534);
+    font-size: 25px;
     border-bottom: 1px solid red;
-    border-color: #969797;
+    border-color: #96979781;
     text-decoration: none;
     margin-bottom: 10px;
 }
@@ -31,7 +32,7 @@ body{
 }
 .container{
     
-    left: 300px; -----------
+    left: 300px; 
     top: 100px;
     position: absolute;
     font-size: 80px;
@@ -45,21 +46,24 @@ body{
     border-color: #33A69F;
     background-color: #1B1D1D;
     font-size: 30px;
-}
+} 
 .about{
-    left: 300px;
+    left: 150px;
     top: 100px;
     position: absolute;
-    font-size: 30px;
+    font-size:20px;
     color: white;
     padding-right:500px;
 
 }
 .heading{
     color: #2C9C95;
-    font-size: 80px;
+    font-size: 60px;
+    font-style:Bold;
+    margin-bottom: 30px;
 }
 .foot{
+    margin-top: 0px;
     color: #2C9C95; 
 }
 .wallpaper{
@@ -72,9 +76,9 @@ body{
 .logos{
     padding-right: 60px;
     border-radius: 10px;
-    padding-top: 140px;       
-    height: 400px;
-    width: 390px;
+    padding-top: 230px;       
+    height: 300px;
+    width: 290px;
 }
 .headings{
     color: white;
@@ -84,4 +88,109 @@ body{
     font-size: 20px;
     padding-right:500px;
 
+}
+.portfoli{
+
+    border-radius: 10px;      
+    height: 100%;
+    width: 100%;
+}
+.contact{
+    left: 150px;
+    top: 400px;
+   display: flex;
+   flex-direction: column; 
+   color: white;
+   position: absolute;
+   
+}
+.inputrect{
+    border-radius: 10px;
+    background-color: #3e4943;
+    height: 40px;
+    width: 250px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.subject{
+    border-radius: 10px;
+    background-color: #3e4943;
+    height: 40px;
+    
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.textArea{
+    background-color: #3e4943;
+    border-radius: 10px;
+    margin-left: 10px;
+    height: 100px;
+
+}
+.SEND{
+    width: 220px;
+    height: 58px;
+    border-radius: 20px;
+    color: #33A69F;
+    border-color: #33A69F;
+    background-color: #1B1D1D;
+    font-size: 20px;
+    align-items: center;
+    margin-top: 30PX;  
+    margin-left: 160px;
+
+
+}
+.contactBlog{
+   display: flex;
+   flex-direction: column; 
+   color: white;
+}
+.inputrectBlog{
+    border-radius: 10px;
+    background-color: #3e4943;
+    height: 20px;
+    width: 80px;
+    margin-bottom: 10px;
+    margin-left: 10px; 
+}
+.subjectBlog{
+    border-radius: 10px;
+    background-color: #3e4943;
+    height: 20px;
+    width: 180px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.textAreaBlog{
+    background-color: #3e4943;
+    border-radius: 10px;
+    margin-left: 10px;
+    height: 50px;
+    width: 180px;
+}
+.SENDBlog{
+    width: 60px;
+    height: 38px;
+    border-radius: 10px;
+    color: #33A69F;
+    border-color: #33A69F;
+    background-color: #1B1D1D;
+    font-size: 15px;
+    align-items: center;
+    margin-top: 10PX;  
+    margin-left: 60px;
+
+}
+.left-container{
+    color: white;
+    
+}
+.form1{
+    margin-top: 70px;
+}
+.right-container{
+    display: flex;
+    justify-content: space-between;
+    color: rgb(235, 224, 224);
 }
