@@ -3,19 +3,40 @@
     <head>
         <title>MY BRAND</title>
         <link rel="stylesheet" href="styles.css">
-        <meta http-equiv="refresh" content="5" />
+        <link rel="stylesheet" href="styles2.css">
+        <link rel="icon" href="img\logo.png" type="image/x-icon">
     </head> 
     <body>
-<div class="nav-bar">
-    <a href="HomePage.html"><img src="img/logo.png" alt="logo" class="logo"></a>
-    <div class="toolbar"></div>
-    <a href="AboutPage.html" class="toolBar">About</a>
-    <a href="Skillpage.html" class="toolBar">Skills</a>
-    <a href="PortfolioPage.html" class="toolBar">Portfolio</a>
-    <a href="#" class="toolBar">Contact</a>
-    <a href="#" class="toolBar">Blog</a>
-</div>
-
+        <aside class="aside">
+            <div class="aside-wrapper">
+                <div class="logo-section">
+                    <a class="logo" rel="home" href="HomePage.html">
+                        <img src="img/logo.png" alt="logo" >
+                        <span></span>
+                    </a>
+                    <span>Web Developer</span>
+                </div>
+    
+                <nav class="nav-links">
+                    <a href="AboutPage.html">About</a>
+                    <a href="Skillpage.html">My Skills</a>
+                    <a href="PortfolioPage.html">Portfolio</a>
+                    <a href="BlogPage.html">Blog</a>
+                    <a href="ContactPage.html">Contact</a>
+                </nav>
+                <!-- social icons -->
+                
+            </div>
+        </aside>
+        <header>
+            <div>
+                <div class="btns-container">
+                    <i class="fas fa-bars bars"></i>
+                    <i class="fas fa-times times"></i>
+                  </div>
+            </div>
+        </header>
+    
 <div class="about">
     <div class="heading">This is me,</div><br><p>I’m a Front-End Developer located in Poland. I have a serious passion for UI effects, animations and creating 
         intuitive, dynamic user experiences.<br><br><br>Well-organised person, problem solver, independent employee with high attention to detail. Fan of MMA, outdoor activities,
@@ -26,6 +47,7 @@
       <div class="foot">more about me,</div> </p>
 
 </div>
-<img src="img/wallpaper.png" alt="wallpaper" class="wallpaper">
+<div class="wallpaper"><img src="img/wallpaper.png" alt="wallpaper" ></div>
+<script src="functionality.js"></script>
 </body>
 </html>

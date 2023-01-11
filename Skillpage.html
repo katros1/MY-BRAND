@@ -3,27 +3,104 @@
     <head>
         <title>MY BRAND</title>
         <link rel="stylesheet" href="styles.css">
-        <meta http-equiv="refresh" content="5" />
+        <link rel="stylesheet" href="styles2.css">
+        <link rel="icon" href="img\logo.png" type="image/x-icon">
     </head> 
     <body>
-<div class="nav-bar">
-    <a href="HomePage.html"><img src="img/logo.png" alt="logo" class="logo"></a>
-    <div class="toolbar"></div>
-    <a href="AboutPage.html" class="toolBar">About</a>
-    <a href="Skillpage.html" class="toolBar">Skills</a>
-    <a href="PortfolioPage.html" class="toolBar">Portfolio</a>
-    <a href="ContactPage.html" class="toolBar">Contact</a>
-    <a href="#" class="toolBar">Blog</a>
-</div>
-<div class="about">
-    <div class="heading">The Skills </div><br><p>Since beginning my journey as a freelance developer nearly 10 years ago, I’ve done remote work for agencies, 
-        consulted for startups, and collaborated with talented people to create web products for both business and consumer use.<br><br><br>
-        I create successful responsive websites that are fast, easy to use, and built with best practices. The main area of my expertise is front-end development, HTML, CSS, JS,
-         building small and medium web apps, custom plugins, features, animations, and coding interactive layouts.<br><br><br>I also have full-stack developer experience with popular open-source CMS like (WordPress, Drupal, Magento, Keystone.js and others) .
+        <header>
+            <div>
+                <div class="btns-container">
+                    <i class="fas fa-bars bars"></i>
+                    <i class="fas fa-times times"></i>
+                  </div>
+            </div>
+        </header>
+        <aside class="aside">
+            <div class="aside-wrapper">
+                <div class="logo-section">
+                    <a class="logo" rel="home" href="HomePage.html">
+                        <img src="img/logo.png" alt="logo" >
+                        <span></span>
+                    </a>
+                    <span>Web Developer</span>
+                </div>
+    
+                <nav class="nav-links">
+                    <a href="AboutPage.html">About</a>
+                    <a href="Skillpage.html">My Skills</a>
+                    <a href="PortfolioPage.html">Portfolio</a>
+                    <a href="BlogPage.html">Blog</a>
+                    <a href="ContactPage.html">Contact</a>
+                </nav>
+                <!-- social icons -->
+                <ul class="social-icons">
+                    <li>
+                        <a href="">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-rss"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <section id="section-about">
 
-        
-      <div class="foot">more about me,</div> </p>
-</div>
-<img src="img/all logs.png" alt="skills pic" class="logos">
-</body>
+            <div class="text-zone3">
+                <div id="header">
+                    <h2>The Skills</h2>
+                </div>
+    
+                <p>Since beginning my journey as a freelance developer nearly 10 years ago, I’ve done remote work for agencies, 
+                    consulted for startups, and collaborated with talented people to create web products for both business and consumer use.
+                </p>
+                <p>
+                    I create successful responsive websites that are fast, easy to use, and built with best practices. The main area of my expertise is front-end development, HTML, CSS, JS,
+            building small and medium web apps, custom plugins, features, animations, and coding interactive layouts.
+                </p>
+                <p>
+                    I also have full-stack developer experience with popular open-source CMS like (WordPress, Drupal, Magento, Keystone.js and others) .
+                </p>
+            </div>
+    <img src="img/all logs.png" class="simg">
+            <div class="skills-charts">
+                <div id="myCanvasContainer">
+                    <canvas width="500" height="500" id="myCanvas">
+                        <ul id="tags">
+                            <li><a href="#" target="_blank">HTML</a></li>
+                            <li><a href="#" target="_blank">CSS</a></li>
+                            <li><a href="#" target="_blank">ES5</a></li>
+                            <li><a href="#" target="_blank">TypeScript</a></li>
+                            <li><a href="#" target="_blank">REST</a></li>
+                            <li><a href="#" target="_blank">JSON</a></li>
+                            <li><a href="#" target="_blank">GSAP</a></li>
+                            <li><a href="#" target="_blank">Data Science</a></li>
+                            <li><a href="#" target="_blank">Wordpress</a></li>
+                            <li><a href="#" target="_blank">PHP</a></li>
+                            <li><a href="#" target="_blank">Python</a></li>
+                            <li><a href="#" target="_blank">Node JS</a></li>
+                            <li><a href="#" target="_blank">Git</a></li>
+                            <li><a href="#" target="_blank">_lodash</a></li>
+                            <li><a href="#" target="_blank">SASS</a></li>
+                            <li><a href="#" target="_blank">JQuery</a></li>
+                            <li><a href="#" target="_blank">SQI</a></li>
+                            <li><a href="#" target="_blank">Gulp</a></li>
+                            <li><a href="#" target="_blank">npm</a></li>
+                            <li><a href="#" target="_blank">BEM</a></li>
+                        </ul>
+                    </canvas>
+                </div>
+            </div>
+        </section>
+        <div class="foot">  <a href="ContactPage.html" >more about me,</a></div> </div>
+        <script src="functionality.js"></script>
+    </body>
 </html>
