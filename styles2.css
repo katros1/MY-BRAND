@@ -413,7 +413,8 @@ margin: 0 0 0 auto;
 flex-flow: row wrap;
 width: 250px;
 height: 200px;
-margin-left: 29px;
+margin-left: 2px;
+margin-top: 20px;
 background: #1d1d1d;
 box-shadow: 0 0  5px 5px #191919;
 }
@@ -435,6 +436,8 @@ box-shadow: 0 0  5px 5px #191919;
     margin-top: 50px;
     justify-content: space-between;
     display: flex;
+    flex-direction: column;
+    padding-right: 50px;
 }
 .container1{
     padding-top: 200px;
@@ -493,14 +496,15 @@ box-shadow: 0 0  5px 5px #191919;
 }
 .copyRight{
     position: absolute;
-    left: 300px;
-    top:650px;
+    left: 60px;
+    top:1300px;
     
     font-family: 'Inter';
     font-style: normal;
     font-weight: 1200;
-    font-size: 20px;
+    font-size: 10px;
     line-height: 17px;
+    width: 150px;
     /* identical to box height */
     
     display: flex;
@@ -510,33 +514,35 @@ box-shadow: 0 0  5px 5px #191919;
 }
 .dashtitle{
     color: #08fdd8;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 900;
     position: absolute;
-    left:400px;
-    top:170px
+    left:150px;
+    top:170px;
+    width:250px;
 
 }
 .dashform{
     background-color: #506b6b;
-    width: 700px;
-    height: 300px;
+    width: 450px;
+    height: 400px;
     position: absolute;
-    left:30px;
+    left:15px;
     top:250px;
 
 }
 
 .copyRight1{
     position: absolute;
-    left: 300px;
-    top:650px;
+    left: 140px;
+    top:800px;
     
     font-family: 'Inter';
     font-style: normal;
     font-weight: 1200;
     font-size: 15px;
     line-height: 17px;
+    width: 250px;
     /* identical to box height */
     
     display: flex;
@@ -558,7 +564,8 @@ box-shadow: 0 0  5px 5px #191919;
         font-weight: 900;
         position: absolute;
         left:580px;
-        top:170px
+        top:170px;
+        width: 350px;
     
     }
     .dashform{
@@ -614,6 +621,7 @@ box-shadow: 0 0  5px 5px #191919;
             margin-top: 50px;
             justify-content: space-between;
             display: flex;
+            flex-direction: row;
      }
     .container1 h3{ 
             font-size: 40px;
