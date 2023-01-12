@@ -54,7 +54,7 @@ body{
     right: 350px;
 } 
 .about{
-    left: 150px;
+    left: 30px;
     top: 100px;
     position: absolute;
     color: white;
@@ -63,9 +63,14 @@ body{
     line-height: 1.5rem;
 
 }
+.about p{
+    width: 450px;
+
+
+}
 .heading{
     color: #2C9C95;
-    font-size: 60px;
+    font-size: 30px;
     font-style:Bold;
     margin-bottom: 30px;
     color: #08fdd8;
@@ -86,8 +91,8 @@ body{
     border-radius: 10px;      
     height: 450px;
     width: 350px;
-    right: 90px;
-    top:70px;
+    right: 15px;
+    top:650px;
 }
 .logos{
     padding-right: 60px;
@@ -167,16 +172,16 @@ body{
 .inputrectBlog{
     border-radius: 10px;
     background-color: #3e4943;
-    height: 20px;
-    width: 80px;
+    height: 40px;
+    width: 150px;
     margin-bottom: 10px;
     margin-left: 10px; 
 }
 .subjectBlog{
     border-radius: 10px;
     background-color: #3e4943;
-    height: 20px;
-    width: 180px;
+    height: 40px;
+    width: 310px;
     margin-left: 10px;
     margin-bottom: 10px;
 }
@@ -184,8 +189,9 @@ body{
     background-color: #3e4943;
     border-radius: 10px;
     margin-left: 10px;
-    height: 50px;
-    width: 180px;
+    height: 70px;
+    width: 310px;
+    margin-right: 0.7px; 
 }
 .SENDBlog{
     width: 60px;
@@ -198,6 +204,7 @@ body{
     align-items: center;
     margin-top: 10PX;  
     margin-left: 60px;
+    margin-bottom: 50px;
 
 }
 .left-container{
@@ -206,24 +213,36 @@ body{
     width: 50px;
     
 }
+.left-container h2{
+    display: none;
+}
 .left-container h4{
     color:#FFFFFF;
     font-size:small;
     margin-left: 10px;
-    
+    display: none;
 }
 .form1 h3{
     font-size: small;
     display: flex;
     flex-direction: column;
     position: absolute;
-    margin-bottom: 20px;
+    margin-bottom: 200px;
+    padding-bottom: 80px;
 }
 .form1{
-    margin-top: 100px;
-    padding-right:50px;
-    width: 20px;
+    position: absolute;
+    top: 2500px;
+    left:20px;
+    width: 200px;
 
+}
+.form1 h3{
+    position: absolute;
+    bottom: 50px;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 200px;;
 }
 .right-container{
     display: flex;
@@ -241,18 +260,19 @@ body{
 }
 .f1{
     display: flex;
+
 }
 .mainBody{
 position: absolute;
-width: 290px;
+width: 100px;
 height: 52px;
-left: 200px;
+left: 0%;
 top: 92px;
 
 font-family: 'Inter';
 font-style: italic;
 font-weight: 900;
-font-size: 30px;
+font-size: 10px;
 line-height: 36px;
 display: flex;
 align-items: center;
@@ -262,8 +282,8 @@ color: #2C9C95;
 
 .continue{
     position: absolute;
-width: 170px;
-height: 55px;
+width: 150px;
+height: 45px;
 
 color: #FFFFFF;
 background: #2C9C95;
@@ -273,20 +293,20 @@ font-weight: 700;
 font-size: 16px;
 line-height: 19px;
 border: 0ch;
-top:270px;
-left:370px;
+top:250px;
+left:130px;
 }
 .hText{
 position: absolute;
-width: 580px;
+width: 400px;
 height: 104px;
-left: 258px;
-top: 92px;
+left: 85px;
+top: 60px;
 
 font-family: 'Inter';
 font-style: italic;
 font-weight: 1800;
-font-size: 60px;
+font-size: 40px;
 line-height: 36px;
 display: flex;
 align-items: center;
@@ -295,15 +315,15 @@ color: #2C9C95;
 }
 .pText{
     position: absolute;
-    width: 580px;
-    height: 104px;
-    left: 258px;
-    top: 140px;
+    width: 300px;
+    height: 100px;
+    left: 85px;
+    top: 100px;
     
     font-family: 'Inter';
     font-style: normal;
     font-weight: 100;
-    font-size: 26px;
+    font-size: 18px;
     line-height: 19px;
     display: flex;
     align-items: center;
@@ -311,8 +331,8 @@ color: #2C9C95;
     color: #FFFFFF;
 }
 .guest{
-width: 120px;
-height: 35px;
+width: 50px;
+height: 25px;
 font-family: 'Inter';
 font-style: italic;
 font-weight: 600;
@@ -327,16 +347,16 @@ border: 0ch;
 }
 .Users{
     position: absolute;
-    width: 260px;
-    height: 100px;
+    width: 180px;
+    height: 80px;
     top:10px; 
-    left: 1100px;
+    left: 250px;
 }
 .formLabel{
 font-family: 'Inter';
 font-style: normal;
 font-weight: 700;
-font-size: 30px;
+font-size: 20px;
 line-height: 18px;
 display: flex;
 align-items: center;
@@ -344,7 +364,7 @@ align-items: center;
 color: #1ad5f6;
 }
 .inputBox{
-width: 400px;
+width: 250px;
 height: 20px;
 background: #d9d9d9;
 border-radius: 20px;
@@ -353,7 +373,7 @@ border: #1CE0D4;
 }
 .form{
 position: absolute;
-left: 400px;
+left: 35px;
 top: 150px;
 background-color: #3b717c53;
 border-radius: 10px;
@@ -372,8 +392,8 @@ font-weight: 700;
 font-size: 16px;
 line-height: 19px;
 border: 0ch;
-top:520px;
-left:550px;
+top:470px;
+left:100px;
 
 }
 .container1 h3{ 
@@ -388,20 +408,28 @@ top: 100px;
 background-color:#3b717c53;
 }
 .box{
-width: 150px;
-height: 150px;
+width: 90%;
+margin: 0 0 0 auto;
+flex-flow: row wrap;
+width: 250px;
+height: 200px;
 margin-left: 29px;
-background: #101313;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+background: #1d1d1d;
+box-shadow: 0 0  5px 5px #191919;
 }
 .box h4{
     font-size: 14px;
     padding:2px 2px 2px ;
     text-decoration: none;
+    text-underline-position: none;
+    color: #08fdd8;
 }
 .box p{
     font-size: 12px;
     padding: 15px 10px 10px;
+}
+.box a h4:hover{
+    color: white;
 }
 .mainDashboard{
     margin-top: 50px;
@@ -516,6 +544,12 @@ box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     
     color: #ffffff;
 }
+.simg{
+    position: absolute;
+    top:415px;
+    width:350px;
+    height:350px;
+ }
 
 @media screen and (min-width: 900px){
     .dashtitle{
@@ -562,29 +596,31 @@ box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
         width: 250px;
         height: 200px;
         margin-left: 29px;
-        background: #101313;
-        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
-        .box h4{
+        background: #1d1d1d;
+        box-shadow: 0 0  5px 5px #191919;
+    }
+    .box h4{
             font-size: 20px;
             padding:10px 10px 10px ;
             text-decoration: none;
-        }
-        .box p{
-            font-size: 20px;
+            color: #08fdd8;
+    }
+    .box p{
+            font-size: 15px;
             padding: 15px 10px 10px;
-        }
-        .mainDashboard{
+            color: #909096;
+     }
+     .mainDashboard{
             margin-top: 50px;
             justify-content: space-between;
             display: flex;
-        }
-        .container1 h3{ 
+     }
+    .container1 h3{ 
             font-size: 40px;
             font-weight: bolder;
             padding-bottom: 30px;
-        }
-        .copyRight1{
+    }
+    .copyRight1{
             position: absolute;
             left: 550px;
             top:650px;
@@ -600,22 +636,249 @@ box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
             align-items: center;
             
             color: #ffffff;
-        }
-        .form1{
+    }
+    .form1{
             margin-top: 100px;
             padding-right:50px;
-            width: 20px;
+            width: 200px;
+            top:650px;
+            left: 0%;
         
-        }
-        .contactBlog{
+    }
+    .contactBlog{
             display: flex;
             flex-direction: column; 
             color: white;
             margin-left: 0%;
-         }
-         .simg{
-            width: 500px;
+    }
+    .simg{  
+        left: 750px;
+        top:60px;   
+        width: 500px;
             height: 450px;
-         }
+    }
+    .about{
+            left: 200px;
+            top: 150px;
+            position: absolute;
+            color: white;
+            padding-right:500px;
+            margin-bottom: 15px;
+            line-height: 1.5rem;
+        
+    }
+    .about p{
+            width: 500px;
+    }
+    .wallpaper img{
+                position: absolute;
+                border-radius: 10px;      
+                height: 500px;
+                width: 450px;
+                right: 90px;
+                top:70px;
+    }
+    .heading{
+            font-size: 60px;
+            font-style:Bold;
+            margin-bottom: 30px;
+            color: #08fdd8;
+            margin-bottom: 30px;
+            font-weight: bolder;
+    }
+    .f1{
+        display: flex;
+    }
+    .left-container{
+        color: rgb(19, 220, 227);
+        font-size: smaller;
+        width: 50px;
+       
+
+    }
+    .left-container h4{
+        color:#FFFFFF;
+        font-size:small;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        font-size: 12px;
+        
+    }
+    .left-container h2{
+        display: flex;
+    }
+    .inputrectBlog{
+        background-color: #3e4943;
+        height: 30px;
+        width: 80px;
+        margin-bottom: 10px;
+        margin-left: 10px; 
+    }
+    .subjectBlog{
+        
+        background-color: #3e4943;
+        height: 30px;
+        width: 172px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+    .textAreaBlog{
+        background-color: #3e4943;
+        margin-left: 10px;
+        height: 100px;
+        width: 172px;
+    }
+    .SENDBlog{
+        width: 60px;
+        height: 38px;
+        border-radius: 10px;
+        color: #33A69F;
+        border-color: #33A69F;
+        background-color: #1B1D1D;
+        font-size: 15px;
+        align-items: center;
+        margin-top: 10PX;  
+        margin-left: 60px;
+    
+    }
+    .form1 h3{
+        font-size: 12px;
+    }
+    .mainBody{
+        position: absolute;
+        width: 290px;
+        height: 52px;
+        left: 200px;
+        top: 92px;
+        
+        font-family: 'Inter';
+        font-style: italic;
+        font-weight: 900;
+        font-size: 30px;
+        line-height: 36px;
+        display: flex;
+        align-items: center;
+        
+        color: #2C9C95;
+        }
+        .hText{
+            position: absolute;
+            width: 580px;
+            height: 104px;
+            left: 258px;
+            top: 92px;
+            
+            font-family: 'Inter';
+            font-style: italic;
+            font-weight: 1800;
+            font-size: 60px;
+            line-height: 36px;
+            display: flex;
+            align-items: center;
+            
+            color: #2C9C95;
+            }
+            .pText{
+                position: absolute;
+                width: 580px;
+                height: 104px;
+                left: 258px;
+                top: 140px;
+                
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 100;
+                font-size: 26px;
+                line-height: 19px;
+                display: flex;
+                align-items: center;
+                
+                color: #FFFFFF;
+            }
+            .continue{
+                position: absolute;
+            width: 170px;
+            height: 55px;
+            
+            color: #FFFFFF;
+            background: #2C9C95;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            border: 0ch;
+            top:270px;
+            left:370px;
+            }
+            .Users{
+                position: absolute;
+                width: 260px;
+                height: 100px;
+                top:10px; 
+                left: 1100px;
+            }    
+            .guest{
+                width: 120px;
+                height: 35px;
+                font-family: 'Inter';
+                font-style: italic;
+                font-weight: 600;
+                font-size: 15px;
+                line-height: 18px;
+                align-items: center;
+                background-color: #2C9C95;
+                color: #FFFFFF;
+                padding: 10px,10px,10px;
+                border: 0ch;
+                
+                }
+                .form{
+                    position: absolute;
+                    left: 400px;
+                    top: 150px;
+                    background-color: #3b717c53;
+                    border-radius: 10px;
+                    padding: 30px  30px  30px;
+                    }
+                    .inputBox{
+                        width: 400px;
+                        height: 20px;
+                        background: #d9d9d9;
+                        border-radius: 20px;
+                        border: #1CE0D4;
+                        
+                        }
+                        .formLabel{
+                            font-family: 'Inter';
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 30px;
+                            line-height: 18px;
+                            display: flex;
+                            align-items: center;
+                            
+                            color: #1ad5f6;
+                     
+                        }
+                        .continue1{
+                            position: absolute;
+                            width: 170px;
+                            height: 55px;
+                            
+                            color: #FFFFFF;
+                            background: #2C9C95;
+                            font-family: 'Inter';
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 16px;
+                            line-height: 19px;
+                            border: 0ch;
+                            top:520px;
+                            left:550px;
+                            
+                            }
 
 }
