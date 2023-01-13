@@ -564,55 +564,55 @@ box-shadow: 0 0  5px 5px #191919;
     height:350px;
  }
  .Queryform{
-    height: 70px;
+    height: 90px;
     
 
 
  }
  .Queryform p{
     position: absolute;
-    top: 50px;
+    top: 35px;
     left: 10px;
-    width: 990px;
+    width: 450px;
     font-size: 15px;
  }
  .Queryform1{
-    height: 70px;
+    height: 90px;
     
 
 
  }
  .Queryform1 p{
     position: absolute;
-    top: 120px;
+    top: 130px;
     left: 10px;
-    width: 990px;
+    width: 450px;
     font-size: 15px;
  }
  .Queryform2{
-    height: 70px;
+    height: 90px;
     
 
 
  }
  .Queryform2 p{
     position: absolute;
-    top: 190px;
+    top: 220px;
     left: 10px;
-    width: 990px;
-    font-size: 15px
+    width: 450px;
+    font-size: 15px;
  }
  .Queryform3{
-    height: 70px;
+    height: 90px;
     
 
 
  }
  .Queryform3 p{
     position: absolute;
-    top: 260px;
+    top: 320px;
     left: 10px;
-    width: 990px;
+    width: 450px;
     font-size: 15px;
  }
  .topsection{
@@ -620,14 +620,14 @@ box-shadow: 0 0  5px 5px #191919;
     display: inline;
     font-size: 11px;
     left: 10px;
-    width: 900px;
+    width: 400px;
     padding-left: 10px;
 
 
  }
  .topsection1{
     position: absolute;
-    top: 70px;
+    top: 90px;
     left: 10px;
     display: inline;
     font-size: 11px;
@@ -637,7 +637,7 @@ box-shadow: 0 0  5px 5px #191919;
  }
  .topsection2{
     position: absolute;
-    top: 140px;
+    top: 180px;
     left: 10px;
     display: inline;
     font-size: 11px;
@@ -648,7 +648,7 @@ box-shadow: 0 0  5px 5px #191919;
  .topsection3{
     position: absolute;
     left: 10px;
-    top: 210px;
+    top: 280px;
     display: inline;
     font-size: 11px;
     width: 900px;
@@ -659,31 +659,31 @@ box-shadow: 0 0  5px 5px #191919;
 
  .qname{
     position: absolute;
-    top: 10px;
+    top: 5px;
     font-size: 15px;
     font-weight: 900;
  }
  .tel{
     position: absolute;
-    left: 200px;
+    left: 100px;
     top: 10px;
 
  }
  .Email{
     position: absolute;
-    left: 400px;
+    left: 170px;
     top: 10px;
  }
  .qButton2{
     display: inline;
     position: absolute;
-    left: 800px;
-    top: 10px;
+    left: 300px;
+    top: 8px;
     width: 210px;
     
  }
  .QueryButton1{
-    font-size: 12px;
+    font-size: 9px;
     height: 20px;
     color: white;
     background-color: #236940;
@@ -691,7 +691,7 @@ box-shadow: 0 0  5px 5px #191919;
     border-radius: 5px;
  }
  .QueryButton2{
-    font-size: 12px;
+    font-size: 9px;
     height: 20px;
     color: white;
     background-color: #b12917;
@@ -699,77 +699,77 @@ box-shadow: 0 0  5px 5px #191919;
     border-radius: 5px;
  }
  .Mblogform{
-    height: 70px;
+    height: 100px;
 
  }
  .Mblogform p{
     position: absolute;
     top: 30px;
-    left: 50px;
+    left: 20px;
     width: 990px;
-    font-size: 20px;
+    font-size: 13px;
 
  }
  .Mblogform1{
-    height: 70px;
-    width: 1000px;
+    height: 100px;
  }
  .Mblogform1 p{
     position: absolute;
-    top: 100px;
-    left: 50px;
+    top: 135px;
+    left: 20px;
     width: 990px;
-    font-size: 20px;
+    font-size: 14px;
  }
  .Mblogform2{
-    height: 70px;
+    height: 100px;
     
 
 
  }
  .Mblogform2 p{
     position: absolute;
-    top: 170px;
-    left: 50px;
+    top: 235px;
+    left: 20px;
     width: 990px;
-    font-size: 20px
+    font-size: 14px
  }
  .Mblogform3{
-    height: 70px;
+    height: 100px;
     
 
 
  }
  .Mblogform3 p{
     position: absolute;
-    top: 240px;
-    left: 50px;
+    top: 325px;
+    left: 20px;
     width: 400px;
-    font-size: 20px;
+    font-size: 14px;
  }
  .bDate{
     position: absolute;
     top: 30px;
-    left: 400px;
+    left: 250px;
     font-size: 15px;
     font-weight: 900;
+    display: none;
  }
 .bViews{
     position: absolute;
-    left: 520px;
+    left: 220px;
     top: 30px;    
 }
 .bLikes{
     position: absolute;
-    left: 620px;
+    left: 320px;
     top: 30px
 }
 .bButton{
     display: inline;
     position: absolute;
-    left: 730px;
-    top: 20px;
-    width: 310px;
+    left: 200px;
+    top: 55px;
+    width: 250px;
     
  }
  .bDate1{
@@ -778,34 +778,36 @@ box-shadow: 0 0  5px 5px #191919;
     left: 400px;
     font-size: 15px;
     font-weight: 900;
+    display: none;
  }
 .bViews1{
     position: absolute;
-    left: 520px;
-    top: 100px;    
+    left: 240px;
+    top: 128px;    
 }
 .bLikes1{
     position: absolute;
-    left: 620px;
-    top: 100px
+    left: 340px;
+    top: 130px
 }
 
  .bDate2{
     position: absolute;
-    top: 170px;
+    top: 250px;
     left: 400px;
     font-size: 15px;
     font-weight: 900;
+    display: none;
  }
 .bViews2{
     position: absolute;
-    left: 520px;
-    top: 170px;    
+    left: 220px;
+    top: 230px;    
 }
 .bLikes2{
     position: absolute;
-    left: 620px;
-    top: 170px
+    left: 320px;
+    top: 230px
 }
 
  .bDate3{
@@ -814,45 +816,46 @@ box-shadow: 0 0  5px 5px #191919;
     left: 400px;
     font-size: 15px;
     font-weight: 900;
+    display: none;
  }
 .bViews3{
     position: absolute;
-    left: 520px;
-    top: 238px;    
+    left: 240px;
+    top: 322px;    
 }
 .bLikes3{
     position: absolute;
-    left: 620px;
-    top: 238px
+    left: 340px;
+    top: 322px
 }
 
  .bButton1{
     display: inline;
     position: absolute;
-    left: 730px;
-    top: 90px;
+    left: 200px;
+    top: 160px;
     width: 210px;
     
  }
  .bButton2{
     display: inline;
     position: absolute;
-    left: 730px;
-    top: 160px;
+    left: 200px;
+    top: 260px;
     width: 210px;
     
  }
  .bButton3{
     display: inline;
     position: absolute;
-    left: 730px;
-    top: 235px;
+    left: 200px;
+    top: 355px;
     width: 210px;
  }
  .mblogButton1{
     font-size: 12px;
-    height: 40px;
-    width: 100px;
+    height: 20px;
+    width: 90px;
     color: white;
     background-color: #236940;
     border-color: #236940;
@@ -860,81 +863,144 @@ box-shadow: 0 0  5px 5px #191919;
  }
  .mblogButton2{
     font-size: 12px;
-    height: 40px;
-    width: 100px;
+    height: 20px;
+    width: 70px;
     background-color: #b12917;
     border-color: #b12917;
     border-radius: 5px;
  }
  .Newblog{
-    background-color: #19d2b3;
+    background-color: #194941a5;
     width: 130px;
     height: 50px;
     position: absolute;
-    top: 5px;
+   margin-top: 170px;
+    left: 350px;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgb(202, 234, 247);
+    border:#1f9985a5 ;
+    border-radius: 10px;
  }
  .QueryButton3{
-    font-size: 12px;
-    height: 20px;
+    position: absolute;
+    left:100px;
+    top:20px;
+    font-size: 10px;
+    height: 10px;
     color: white;
     background-color: #09adee;
     border-color: #09adee;
     border-radius: 5px;
-    width: 60px;
+    width: 30px;
     height: 30px;
  }
  .CQueryform{
-    height: 70px;
+    height: 90px;
     
 
 
  }
  .CQueryform p{
     position: absolute;
-    top: 40px;
+    top: 30px;
     left: 10px;
-    width: 990px;
+    width: 400px;
     font-size: 15px;
  }
  .CQueryform1{
-    height: 70px;
+    height: 90px;
     
 
 
  }
  .CQueryform1 p{
     position: absolute;
-    top: 110px;
+    top: 125px;
     left: 10px;
-    width: 990px;
+    width: 400px;
     font-size: 15px;
  }
  .CQueryform2{
-    height: 70px;
+    height: 90px;
     
 
 
  }
  .CQueryform2 p{
     position: absolute;
-    top: 180px;
+    top: 210px;
     left: 10px;
-    width: 990px;
+    width: 400px;
     font-size: 15px
  }
  .CQueryform3{
-    height: 70px;
+    height: 90px;
     
 
 
  }
  .CQueryform3 p{
     position: absolute;
-    top: 260px;
+    top: 310px;
     left: 10px;
-    width: 990px;
+    width: 400px;
     font-size: 15px;
  }
+ .Userfrm{
+    height: 70px;
+    font-size: 15px;
+ }
+ .Usrform1{
+    position: absolute;
+    top: 10px;
+
+ }
+ .Usrform2{
+    position: absolute;
+    left: 90px;
+
+ }
+ .Usrform3{
+    position: absolute;
+    left: 150px;
+    
+
+ }
+ .Usrform4{
+    position: absolute;
+    left: 300px;
+    
+ }
+ .buButton1{
+    position: absolute;
+    left: 200px;
+    top: 50px;
+    width: 300px;
+    
+ }
+ .buButton2{
+    position: absolute;
+    left: 200px;
+    top: 120px;
+    width: 300px;
+    
+ }
+ .buButton3{
+    position: absolute;
+    left: 200px;
+    top: 190px;
+    width: 300px;
+    
+ }
+ .buButton4{
+    position: absolute;
+    left: 200px;
+    top: 265px;
+    width: 300px;
+    
+ }
+
  
  
 @media screen and (min-width: 900px){
@@ -1276,4 +1342,432 @@ box-shadow: 0 0  5px 5px #191919;
     align-items: center;
     display: flex;
 }
+.Queryform{
+    height: 70px;
+    
+
+
+ }
+ .Queryform p{
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    width: 990px;
+    font-size: 15px;
+ }
+ .Queryform1{
+    height: 70px;
+    
+
+
+ }
+ .Queryform1 p{
+    position: absolute;
+    top: 120px;
+    left: 10px;
+    width: 990px;
+    font-size: 15px;
+ }
+ .Queryform2{
+    height: 70px;
+    
+
+
+ }
+ .Queryform2 p{
+    position: absolute;
+    top: 190px;
+    left: 10px;
+    width: 990px;
+    font-size: 15px
+ }
+ .Queryform3{
+    height: 70px;
+    
+
+
+ }
+ .Queryform3 p{
+    position: absolute;
+    top: 260px;
+    left: 10px;
+    width: 990px;
+    font-size: 15px;
+ }
+ .topsection{
+    position: absolute;
+    display: inline;
+    font-size: 11px;
+    left: 10px;
+    width: 900px;
+    padding-left: 10px;
+
+
+ }
+ .topsection1{
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    display: inline;
+    font-size: 11px;
+    width: 900px;
+
+
+ }
+ .topsection2{
+    position: absolute;
+    top: 140px;
+    left: 10px;
+    display: inline;
+    font-size: 11px;
+    width: 900px;
+
+
+ }
+ .topsection3{
+    position: absolute;
+    left: 10px;
+    top: 210px;
+    display: inline;
+    font-size: 11px;
+    width: 900px;
+    background-color: hsl(150, 4%, 10%);
+
+
+ }
+
+ .qname{
+    position: absolute;
+    top: 10px;
+    font-size: 15px;
+    font-weight: 900;
+ }
+ .tel{
+    position: absolute;
+    left: 200px;
+    top: 10px;
+
+ }
+ .Email{
+    position: absolute;
+    left: 400px;
+    top: 10px;
+ }
+ .qButton2{
+    display: inline;
+    position: absolute;
+    left: 800px;
+    top: 10px;
+    width: 210px;
+    
+ }
+ .QueryButton1{
+    font-size: 12px;
+    height: 20px;
+    color: white;
+    background-color: #236940;
+    border-color: #236940;
+    border-radius: 5px;
+ }
+ .QueryButton2{
+    font-size: 12px;
+    height: 20px;
+    color: white;
+    background-color: #b12917;
+    border-color: #b12917;
+    border-radius: 5px;
+ }
+ .Mblogform{
+    height: 70px;
+
+ }
+ .Mblogform p{
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    width: 990px;
+    font-size: 20px;
+
+ }
+ .Mblogform1{
+    height: 70px;
+    width: 1000px;
+ }
+ .Mblogform1 p{
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    width: 990px;
+    font-size: 20px;
+ }
+ .Mblogform2{
+    height: 70px;
+    
+
+
+ }
+ .Mblogform2 p{
+    position: absolute;
+    top: 170px;
+    left: 50px;
+    width: 990px;
+    font-size: 20px
+ }
+ .Mblogform3{
+    height: 70px;
+    
+
+
+ }
+ .Mblogform3 p{
+    position: absolute;
+    top: 240px;
+    left: 50px;
+    width: 400px;
+    font-size: 20px;
+ }
+ .bDate{
+    position: absolute;
+    top: 30px;
+    left: 400px;
+    font-size: 15px;
+    font-weight: 900;
+ }
+.bViews{
+    position: absolute;
+    left: 520px;
+    top: 30px;    
+}
+.bLikes{
+    position: absolute;
+    left: 620px;
+    top: 30px
+}
+.bButton{
+    display: inline;
+    position: absolute;
+    left: 730px;
+    top: 20px;
+    width: 310px;
+    
+ }
+ .bDate1{
+    position: absolute;
+    top: 100px;
+    left: 400px;
+    font-size: 15px;
+    font-weight: 900;
+ }
+.bViews1{
+    position: absolute;
+    left: 520px;
+    top: 100px;    
+}
+.bLikes1{
+    position: absolute;
+    left: 620px;
+    top: 100px
+}
+
+ .bDate2{
+    position: absolute;
+    top: 170px;
+    left: 400px;
+    font-size: 15px;
+    font-weight: 900;
+ }
+.bViews2{
+    position: absolute;
+    left: 520px;
+    top: 170px;    
+}
+.bLikes2{
+    position: absolute;
+    left: 620px;
+    top: 170px
+}
+
+ .bDate3{
+    position: absolute;
+    top: 238px;
+    left: 400px;
+    font-size: 15px;
+    font-weight: 900;
+ }
+.bViews3{
+    position: absolute;
+    left: 520px;
+    top: 238px;    
+}
+.bLikes3{
+    position: absolute;
+    left: 620px;
+    top: 238px
+}
+
+ .bButton1{
+    display: inline;
+    position: absolute;
+    left: 730px;
+    top: 90px;
+    width: 210px;
+    
+ }
+ .bButton2{
+    display: inline;
+    position: absolute;
+    left: 730px;
+    top: 160px;
+    width: 210px;
+    
+ }
+ .bButton3{
+    display: inline;
+    position: absolute;
+    left: 730px;
+    top: 235px;
+    width: 210px;
+ }
+ .mblogButton1{
+    font-size: 12px;
+    height: 40px;
+    width: 100px;
+    color: white;
+    background-color: #236940;
+    border-color: #236940;
+    border-radius: 5px;
+ }
+ .mblogButton2{
+    font-size: 12px;
+    height: 40px;
+    width: 100px;
+    background-color: #b12917;
+    border-color: #b12917;
+    border-radius: 5px;
+ }
+ .Newblog{
+    background-color: #19d2b3;
+    width: 130px;
+    height: 50px;
+    position: absolute;
+    top: 5px;
+ }
+ .QueryButton3{
+    position: absolute;
+    left:90px;
+    top:10px;
+    font-size: 12px;
+    height: 20px;
+    color: white;
+    background-color: #09adee;
+    border-color: #09adee;
+    border-radius: 5px;
+    width: 60px;
+    height: 30px;
+ }
+ .CQueryform{
+    height: 70px;
+    
+
+
+ }
+ .CQueryform p{
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    width: 990px;
+    font-size: 15px;
+ }
+ .CQueryform1{
+    height: 70px;
+    
+
+
+ }
+ .CQueryform1 p{
+    position: absolute;
+    top: 110px;
+    left: 10px;
+    width: 990px;
+    font-size: 15px;
+ }
+ .CQueryform2{
+    height: 70px;
+    
+
+
+ }
+ .CQueryform2 p{
+    position: absolute;
+    top: 180px;
+    left: 10px;
+    width: 990px;
+    font-size: 15px
+ }
+ .CQueryform3{
+    height: 70px;
+    
+
+
+ }
+ .CQueryform3 p{
+    position: absolute;
+    top: 260px;
+    left: 10px;
+    width: 990px;
+    font-size: 15px;
+ }
+ .Userfrm{
+    height: 70px;
+    font-size: 18px;
+ }
+ .Usrform1{
+    position: absolute;
+    top: 10px;
+
+ }
+ .Usrform2{
+    position: absolute;
+    left: 160px;
+
+ }
+ .Usrform3{
+    position: absolute;
+    left: 300px;
+    
+
+ }
+ .Usrform4{
+    position: absolute;
+    left: 600px;
+    
+ }
+ .buButton1{
+    position: absolute;
+    left: 730px;
+    top: 20px;
+    width: 210px;
+    
+ }
+ .buButton2{
+    position: absolute;
+    left: 730px;
+    top: 85px;
+    width: 210px;
+    
+ }
+ .buButton3{
+    position: absolute;
+    left: 730px;
+    top: 160px;
+    width: 210px;
+    
+ }
+ .buButton4{
+    position: absolute;
+    left: 730px;
+    top: 230px;
+    width: 210px;
+    
+ }
 }
