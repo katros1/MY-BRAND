@@ -1003,15 +1003,15 @@ box-shadow: 0 0  5px 5px #191919;
  .blog-article{
    width: 1000px;
    position: absolute;
-   left: 300px;
+   left: 30px;
+   top:200px;
    border: 1px solid rgb(240, 240, 150);
    padding: 30px 30px 30px;
    margin-top: 5px;
  }
 
  .blog-article  img{
-   height: 200px;
-   width: 500px;
+   width: 90%;
    margin-top: 30px;
    margin-left: 50px;
    margin-right: 50px;
@@ -1045,8 +1045,79 @@ box-shadow: 0 0  5px 5px #191919;
    color: #d1c76a;
    margin-bottom: 30px;
  }
+.catediv{
+   position: absolute;
+   top: 250px;
+   left: 1070px;
+}
+.catediv h2{
+   font-size: 40px;
+   padding-bottom: 20px;
+}
+.catediv h3{
+   font-size: 16px;
+   color: white;
+}
+.form2{
+   position: absolute;
+   width: 200px;
+   top:2600px;
+   left: 1050px;
+   
 
- 
+} 
+.form2 h3{
+   font-size: 15px;
+   width: 300px;
+   margin-left: 10px;
+   margin-bottom: 30px;
+}
+.inputrectBlog2{
+   background-color: #3e4943;
+   height: 60px;
+   width: 130px;
+   margin-bottom: 10px;
+   margin-left: 10px; 
+   font-size: 15px;
+}
+.subjectBlog2{
+   background-color: #3e4943;
+   height: 60px;
+   width: 269px;
+   margin-left: 10px;
+   margin-bottom: 10px;
+   font-size: 15px;
+}
+.textAreaBlog2{
+   background-color: #3e4943;
+   margin-left: 10px;
+   height: 150px;
+   width: 269px;
+}
+.contactBlog2{
+   display: flex;
+   flex-direction: column; 
+   color: white;
+   margin-left: 0%;
+}
+.SENDBlog2{
+   width: 100px;
+   height: 38px;
+   border-radius: 10px;
+   color: #33A69F;
+   border-color: #33A69F;
+   background-color: #1B1D1D;
+   font-size: 15px;
+   align-items: center;
+   margin-top: 10PX;  
+   margin-left: 60px;
+
+}
+.backarrow a{
+   text-decoration: none;
+   color: #08fdd8;
+
+}
  
 @media screen and (min-width: 900px){
     .dashtitle{
