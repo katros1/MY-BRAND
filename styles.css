@@ -7,6 +7,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+#froala{
+    background-color: #2b2b2b;
+}
 body{
     font-family: sans-serif;
     color: rgb(255, 255, 255);
@@ -277,7 +280,7 @@ header{
     font-size: 12rem;
     font-weight: 700;
     position: absolute;
-    color: #2d2d2e;
+    color: #2c2a34;
     left: 10px;
     bottom: -70px;
     letter-spacing: -10px;
@@ -399,7 +402,7 @@ header{
     color: #06b99e;
 }
 /* contact section starts here. The Final Part */
-.contact-heading {
+.header {
     margin-bottom: 30px;
   }
   .contact-section {
@@ -524,7 +527,21 @@ header{
     right: 100px;
     top: 300px;
 }
-
+.back-big{
+    font-size:  25rem;
+    font-weight: 700;
+    position: absolute;
+    color: #2c2a34;
+    left: 800px;
+    top: 50px;
+    bottom: -70px;
+    letter-spacing: -10px;
+    z-index: -999;
+ }
+ .blogLog i{
+    position: absolute;
+    margin-left: 200px;
+ }
 
 /* media section for bigger screens */
 

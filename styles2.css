@@ -41,6 +41,14 @@ body{
     color: white;
     display: flex;
 }
+.heading2{
+   font-size: 60px;
+   font-style:Bold;
+   margin-bottom: 30px;
+   color: #08fdd8;
+   margin-bottom: 30px;
+   font-weight: bolder;
+}
 .button{
     position: absolute;
     width: 220px;
@@ -1117,6 +1125,12 @@ box-shadow: 0 0  5px 5px #191919;
    text-decoration: none;
    color: #08fdd8;
 
+}
+
+.blogLog i{
+   position: absolute;
+   left: 800px;
+   margin-left: 200px;
 }
  
 @media screen and (min-width: 900px){
