@@ -7,24 +7,36 @@
         <title>MY BRAND</title>
         <link rel="stylesheet" href="styles2.css">
         <link rel="icon" href="img\logo.png" type="image/x-icon">
+        <script src="https://kit.fontawesome.com/ea32ac11c6.js" crossorigin="anonymous"></script>
     </head> 
-    <body>
+    <body><div class="loginForm">
         <a href="#"><img src="img/logo.png" alt="logo" class="logo"></a>
         
-            <form action="" class="form">
-                <h3 class="formLabel">username:</h3>
-                <input type="text" class="inputBox">
-                <h3 class="formLabel">Password:</h3>
-                <input type="text" class="inputBox">
+            <form  class="form" id="form">
+                 <div class="formControl" id="formControl"> 
+                    <h3 class="formLabel">Username:</h3>
+                <input type="text" class="inputBox1" id="inputBox1" >
+                <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+                <small>Error message</small>
+                  </div>
+            <div class="formControl" id="formControl"> 
+                 <h3 class="formLabel">Password:</h3>
+                <input type="password" class="inputBox2" id="inputBox2">
+                <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+                <small>Error message</small>
+            </div>
                 <h4 style="color: blanchedalmond;">Forget your Password</h4>
-
+                 
+                <button  class="continue1" >Login</button>
             </form>
-            <a href="dashboard.html"><button class="continue1">Login</button></a>
-        
+           
+        </div>
         <div class="Users">
             <a href="HomePage.html"><button class="guest">Back</button></a>
             <a href="index.html"><button class="guest">Guest</button></a>
-        </div>     
+        </div>
+        </div> 
+          <script src="functionality2.js"></script>
     </body>
 </html>
     

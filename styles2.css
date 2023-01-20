@@ -178,15 +178,20 @@ body{
    position: static;
 }
 .inputrectBlog{
-    border-radius: 10px;
     background-color: #3e4943;
     height: 40px;
     width: 150px;
     margin-bottom: 10px;
     margin-left: 10px; 
 }
+inputrectBlog1{
+   background-color: #3e4943;
+   height: 40px;
+   width: 150px;
+   margin-bottom: 10px;
+   margin-left: 10px; 
+}
 .subjectBlog{
-    border-radius: 10px;
     background-color: #3e4943;
     height: 40px;
     width: 310px;
@@ -201,26 +206,7 @@ body{
     width: 310px;
     margin-right: 0.7px; 
 }
-.SENDBlog{
-    width: 60px;
-    height: 38px;
-    border-radius: 10px;
-    color: #33A69F;
-    border-color: #33A69F;
-    background-color: #1B1D1D;
-    font-size: 15px;
-    align-items: center;
-    margin-top: 10PX;  
-    margin-left: 60px;
-    margin-bottom: 50px;
 
-}
-.left-container{
-    color: rgb(19, 220, 227);
-    font-size: smaller;
-    width: 50px;
-    
-}
 .left-container h2{
     display: none;
 }
@@ -371,14 +357,33 @@ align-items: center;
 
 color: #1ad5f6;
 }
-.inputBox{
+.inputBox1{
 width: 250px;
 height: 20px;
-background: #d9d9d9;
+color: #8a8484;
+background: #0e2b33;
 border-radius: 20px;
 border: #1CE0D4;
+font-size: 18px;
+font-family: sans-serif;
+padding: 0 20px;
 
 }
+.inputBox2{
+   width: 250px;
+   height: 20px;
+   color: #8a8484;
+   background: #0e2b33;
+   border-radius: 20px;
+   border: #1CE0D4;
+   font-size: 18px;
+   font-family: sans-serif;
+   padding : 0 20px;
+   
+   
+   }
+
+
 .form{
 position: absolute;
 left: 35px;
@@ -393,7 +398,7 @@ width: 170px;
 height: 55px;
 
 color: #FFFFFF;
-background: #2C9C95;
+background: #11736d;
 font-family: 'Inter';
 font-style: normal;
 font-weight: 700;
@@ -1081,15 +1086,19 @@ box-shadow: 0 0  5px 5px #191919;
    margin-bottom: 30px;
 }
 .inputrectBlog2{
-   background-color: #3e4943;
    height: 60px;
    width: 130px;
    margin-bottom: 10px;
    margin-left: 10px; 
    font-size: 15px;
+   box-shadow: 0 0 0px 1000px #2b2b2b inset;
+   color: #8a8484;
+   font-size: 16px;
 }
 .subjectBlog2{
-   background-color: #3e4943;
+   font-size: 16px;
+   box-shadow: 0 0 0px 1000px #2b2b2b inset;
+   color: #8a8484;
    height: 60px;
    width: 269px;
    margin-left: 10px;
@@ -1108,8 +1117,18 @@ box-shadow: 0 0  5px 5px #191919;
    color: white;
    margin-left: 0%;
 }
+
+
+
+.SENDBlog2 div{
+   position: relative;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   transition:  all .3s ease-in-out;
+}
 .SENDBlog2{
-   width: 100px;
+   width: 60px;
    height: 38px;
    border-radius: 10px;
    color: #33A69F;
@@ -1119,7 +1138,49 @@ box-shadow: 0 0  5px 5px #191919;
    align-items: center;
    margin-top: 10PX;  
    margin-left: 60px;
+   margin-bottom: 50px;
 
+}
+.SENDBlog2 span.bg{
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  left: -5px;
+  top: 0;
+  transition: all .3s ease-in-out;
+  background-color: #08fdd8;
+  transform: skewX(-19deg);
+  
+}
+.SENDBlog2:hover span.bg{
+  width: 110%;
+}
+.SENDBlog2.base{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  border: 1px solid #08fdd8;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.SENDBlog2 span.text{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 8px;
+  left: 0;
+  align-items: center;
+  
+}
+.SENDBlog2:hover span.text{
+  color: #1d1d1d;
+}
+.left-container{
+   color: rgb(19, 220, 227);
+   font-size: smaller;
+   width: 50px;
+   
 }
 .backarrow a{
    text-decoration: none;
@@ -1131,6 +1192,92 @@ box-shadow: 0 0  5px 5px #191919;
    position: absolute;
    left: 800px;
    margin-left: 200px;
+}
+.formControl{
+   position: relative;
+   padding-bottom: 10px;
+}
+.formControl i{
+   position: absolute;
+   left: 400px;
+   top: 50px;
+   visibility: hidden;
+   
+
+}
+
+.formControl small{
+   position: absolute;
+   left: 0;
+   top: 80px;
+   visibility: hidden;
+}
+
+.check small{
+   color: red;
+   visibility: visible;
+}
+.check i{
+   color: red;
+   visibility: visible;
+}
+.check input{
+   border-bottom: 2px solid red;
+}
+
+.formControl2{
+   position: relative;
+   padding-bottom: 10px;
+}
+
+.formControl2 small{
+   position: absolute;
+   font-size: 12px;
+   left: 10px;
+   top: 61px;
+   visibility: hidden;
+}
+.formControl2 .txtError{
+   position: absolute;
+   font-size: 13px;
+   left: 12px;
+   top: 153px;
+   visibility: hidden;
+}
+
+.error small{
+   color: red;
+   visibility: visible;
+}
+.error .txtError{
+   color: red;
+   visibility: visible;
+}
+
+.error input{
+   border-bottom: 2px solid red;
+}
+  .sentMessage{
+   background-color: #16aa94;
+   height: 50px;
+   width: 200px;
+   display: flex;
+   align-items: center;
+   text-align: center;
+   justify-content: center;
+   border-radius: 5px;
+   position: absolute;
+   top: 150px;
+   left: 45px;
+   visibility: hidden;   
+}
+.succes .sentMessage{
+   visibility: visible;
+   opacity: 1;
+   transition: opacity 0.1s ease-in-out;
+}
+.succes .sentMessage .hide{
+  opacity: 0;
 }
  
 @media screen and (min-width: 900px){
@@ -1294,7 +1441,16 @@ box-shadow: 0 0  5px 5px #191919;
         display: flex;
     }
     .inputrectBlog{
-        background-color: #3e4943;
+      
+      box-shadow: 0 0 0px 1000px #2b2b2b inset;
+        height: 30px;
+        width: 80px;
+        margin-bottom: 10px;
+        margin-left: 10px; 
+    }
+    .inputrectBlog1{
+      
+      box-shadow: 0 0 0px 1000px #2b2b2b inset;
         height: 30px;
         width: 80px;
         margin-bottom: 10px;
@@ -1302,7 +1458,7 @@ box-shadow: 0 0  5px 5px #191919;
     }
     .subjectBlog{
         
-        background-color: #3e4943;
+      box-shadow: 0 0 0px 1000px #2b2b2b inset;
         height: 30px;
         width: 172px;
         margin-left: 10px;
@@ -1427,14 +1583,24 @@ box-shadow: 0 0  5px 5px #191919;
                     border-radius: 10px;
                     padding: 30px  30px  30px;
                     }
-                    .inputBox{
+                    .inputBox1{
                         width: 400px;
                         height: 20px;
-                        background: #d9d9d9;
+                        color: #8a8484;
+                        background: #0e2b33;
                         border-radius: 20px;
                         border: #1CE0D4;
                         
                         }
+                        .inputBox2{
+                           width: 400px;
+                           height: 20px;
+                           color: #8a8484;
+                           background: #0e2b33;
+                           border-radius: 20px;
+                           border: #1CE0D4;
+                           
+                           }
                         .formLabel{
                             font-family: 'Inter';
                             font-style: normal;
@@ -1460,8 +1626,8 @@ box-shadow: 0 0  5px 5px #191919;
                             font-size: 16px;
                             line-height: 19px;
                             border: 0ch;
-                            top:520px;
-                            left:550px;
+                            top:400px;
+                            left:150px;
                             
                             }
 

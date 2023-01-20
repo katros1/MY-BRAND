@@ -10,7 +10,7 @@
         <link rel="icon" href="img\logo.png" type="image/x-icon">
         <link href="node_modules/froala-editor/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="node_modules/froala-editor/js/froala_editor.pkgd.min.js"></script>
-        <link href="../css/themes/dark.min.css" rel="stylesheet" type="text/css" />
+        <link href="../css/themes/gray.min.css" rel="stylesheet" type="text/css" />
     </head> 
     <body>
         <header>
@@ -44,33 +44,47 @@
         </aside>
        <div class="back-big"><div class="blogLog"><i class="fa-sharp fa-solid fa-blog"></i></div></div>
         <div class="contact-section contact-wrapper">
-            <form class="contact-form">
+            <form class="contact-form" id="contact-form">
               <div class="contact-heading">
                 <div id="header">
                   <h2>Create New Blog</h2>
-                </div>
+                </div></div>
                 <div class="form-input-wrapper">
+                  <div class="blogForm"> 
                     <div class="form-input-group">
-                      <input type="text" placeholder="About" name="name" class="name" />
+                      <input type="text" placeholder="About" name="name" class="name" id="name" />
                       <span></span>
                     </div>
+
+                  </div>
+                    
                     
                   </div>
                   <div class="form-input-group">
+                    <div class="blogForm">
                     <input
                       type="text"
                       placeholder="Title"
                       class="subject"
+                      id="subject"
                       name="subject"
                     />
                     <span></span>
+
+                    <small>Error message</small>
+
                   </div>
+                </div>
+                <div class="blogForm">
                   <div class="form-input-group">
                     <div id="froala"></div>
                     
                     <span></span>
+                    
                   </div>
-                  <div class="message"></div>
+                  <small>Error message</small>
+                </div>
+                  <div class="message"></div> 
                   <button type="submit" class="contact-button submit-button">
                     <div>
                         <span class="bg"></span>
@@ -80,7 +94,28 @@
                         </span>
                       </div>
                     </button>
+                    
+                    
+            </form>
+            <button type="button" class="contact-button1 submit-button">
+              <div>
+                  <span class="bg"></span>
+                  <span class="base"></span>
+                  <span class="text">
+                    Upload image
+                    <i class="fa-solid fa-image"></i>
+                  </span>
+                </div>
+              </button>
         <script src="functionality.js"></script>
+        
         <script> var editor = new FroalaEditor('#froala'); </script>
+        <script>
+          new FroalaEditor('div#eg-gray-theme', {
+    // Set gray theme name.
+    theme: 'gray',
+    zIndex: 2001
+  })
+        </script>
     </body>
     </html>

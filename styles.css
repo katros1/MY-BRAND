@@ -472,13 +472,13 @@ header{
   
   .success input,
   .success textarea {
-    border-bottom: 2px solid green;
+    border-bottom: 2px solid rgb(2, 135, 180);
     transition: all 0.2s linear;
   }
   .message {
     position: absolute;
     bottom: 500px;
-    right: 0;
+    right: 0px;
     transition: all 0.3s ease-in-out;
     transform: translate(100%, 50%);
     transition: all 0.3s linear;
@@ -498,6 +498,7 @@ header{
   .message-content.hide {
     opacity: 0;
   }
+
   
   .google-map {
     width: 100%;
@@ -542,6 +543,76 @@ header{
     position: absolute;
     margin-left: 200px;
  }
+ /* create blog */
+
+ .contact-button1{
+    text-decoration: none;
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    letter-spacing: 3px;
+    position: relative;
+    text-align: center;
+    color: #08fdd8;
+    margin-top: 50px;
+}
+.contact-button1 div{
+    position: absolute;
+   bottom: 410px;
+   left:200px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition:  all .3s ease-in-out;
+}
+.contact-button1 span.bg{
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    left: -5px;
+    top: 0;
+    transition: all .3s ease-in-out;
+    background-color: #08fdd8;
+    transform: skewX(-19deg);
+    
+}
+.contact-button1:hover span.bg{
+    width: 110%;
+}
+.contact-button1 span.base{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    border: 1px solid #08fdd8;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.contact-button1 span.text{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    
+}
+.contact-button1:hover span.text{
+    color: #1d1d1d;
+}
+.blogForm{
+    padding-bottom: 10px;
+    position: relative;
+}
+.blogForm small{
+    visibility: hidden;
+}
+.eror small{
+    visibility: visible;
+    color: red;
+
+}
 
 /* media section for bigger screens */
 
@@ -695,7 +766,8 @@ header{
     height: 100vh;
   }
   .message {
-    bottom: 100px;
+    bottom: 380px;
+    right: 400px;
   }
 
     
