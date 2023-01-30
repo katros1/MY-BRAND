@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="styles2.css">
         <link rel="icon" href="img\logo.png" type="image/x-icon">
     </head> 
-    <body>
+    <body onload="updateBlogs()">
         <header>
             <div>
                 <div class="btns-container">
@@ -40,91 +40,24 @@
             </div>
         </aside>
 
-       <div class="dashtitle"><h3>Manage Blogs</h3></div> 
-
-       
-
+       <div class="dashtitleB"><h3>Manage Blogs</h3></div> 
+ 
     <!--start of management form-->
-        <form action="" class="dashform">
-            <div class="Mblogform">
-                <p>Algorithm and Data Structures</p>
-                <div class="bDate">05 Feb 2022</div> <div class="bViews"> <i class="fa-solid fa-eye"></i> 5viewers</div>
-                <div class="bLikes"><i class="fa-regular fa-heart"></i>5Likes</div>
-
-                    <div class="bButton">
-                        <button class="mblogButton1">
-                                   Edit Blog
-                        </button>
-                                <button class="mblogButton2">
-                                    Delete Blog
-                                </button>
-                    </div>
-                 
-                    
-               </div> <hr>
-
-               <!--another query -->
-               <div class="Mblogform1">
-                <p>Database Querries To one Table</p>
-                <div class="bDate1">05 Feb 2022</div> <div class="bViews1"> <i class="fa-solid fa-eye"></i> 5viewers</div>
-                    <div class="bLikes1"><i class="fa-regular fa-heart"></i>5Likes</div>
-                    <div class="bButton1">
-                        <button class="mblogButton1">
-                                   Edit Blog
-                        </button>
-                                <button class="mblogButton2">
-                                    Delete Blog
-                                </button>
-                    </div>
-                </section>
-                
-               </div><hr>
-
-               <!--another query -->
-               <div class="Mblogform2">
-                <p>Advanced Design Techniques</p>
-                <div class="bDate2">05 Feb 2022</div> <div class="bViews2"> <i class="fa-solid fa-eye"></i> 5viewers</div>
-                <div class="bLikes2"><i class="fa-regular fa-heart"></i>5Likes</div>
-                    <div class="bButton2">
-                        <button class="mblogButton1">
-                                   Edit Blog
-                        </button>
-                                <button class="mblogButton2">
-                                    Delete Blog
-                                </button>
-                
-               
-                            </div>
-               
-               </div><hr>
-
-               <!--another query -->
-               <div class="Mblogform3"> 
-                <p>Fundametal of HTML5 and CSS3</p>
-                <div class="bDate3">05 Feb 2022</div> <div class="bViews3"> <i class="fa-solid fa-eye"></i> 5viewers</div>
-                <div class="bLikes3"><i class="fa-regular fa-heart"></i>5Likes</div>
-                <div class="bButton3">
-                    <button class="mblogButton1">
-                               Edit Blog
-                    </button>
-                            <button class="mblogButton2">
-                                Delete Blog
-                            </button>
-               
-
-                </div>
-            
+        <div class="dashform" id="dashf">
 
 
-               </div></form>
+        </div>
               <a href="CreateBlogPage.html"><div><button class="Newblog">Upload</button></div>
               </a>  
      <div class="topRightCorner1">
-            <div class="RoundedCircle">K</div>
-            <a href="index.html" id="Logout">Logout</a>
+            <div class="RoundedCircle1">K</div>
+            <a href="index.html" id="Logout1">Logout   <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </div>
         <p class="copyRight1">©Katros website.All rights reserved</p>
-    </div>
+    
     <script src="functionality.js"></script>
+    <script src="storingArticles.js"></script>
+    <script src="delete.js"></script>
+    <script src="EditBlog.js"></script>
     </body>
     </html>

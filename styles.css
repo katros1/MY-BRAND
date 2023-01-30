@@ -419,6 +419,13 @@ header{
     width: 100%;
     position: relative;
   }
+  #blogBdy{
+    height: 15px;
+  }
+  #photo{
+    width: 400px;
+    height: 70px;
+  }
   
   .form-input-group input,
   textarea {
@@ -554,14 +561,16 @@ header{
     line-height: 40px;
     letter-spacing: 3px;
     position: relative;
+    margin-left: 120px;
+   margin-bottom: 125px;
     text-align: center;
     color: #08fdd8;
     margin-top: 50px;
 }
 .contact-button1 div{
     position: absolute;
-   bottom: 410px;
-   left:200px;
+   bottom: 210px;
+   left:50px;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -601,6 +610,66 @@ header{
 .contact-button1:hover span.text{
     color: #1d1d1d;
 }
+
+.contact-button2{
+    text-decoration: none;
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    letter-spacing: 3px;
+    position: relative;
+    margin-top: 600px;
+    margin-left: 400px;
+    text-align: center;
+    color: #08fdd8;
+    margin-top: 50px;
+}
+.contact-button2 div{
+    position: absolute;
+   bottom: 10px;
+   left:50px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition:  all .3s ease-in-out;
+}
+.contact-button2 span.bg{
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    left: -5px;
+    top: 0;
+    transition: all .3s ease-in-out;
+    background-color: #08fdd8;
+    transform: skewX(-19deg);
+    
+}
+.contact-button2:hover span.bg{
+    width: 110%;
+}
+.contact-button2 span.base{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    border: 1px solid #08fdd8;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.contact-button2 span.text{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    
+}
+.contact-button2:hover span.text{
+    color: #1d1d1d;
+}
+
 .blogForm{
     padding-bottom: 10px;
     position: relative;
@@ -614,6 +683,11 @@ header{
 
 }
 
+
+.blog-post-content img{
+    width: 30%;
+    margin-left: 30px;
+}
 /* media section for bigger screens */
 
 @media screen and (min-width: 900px) {
@@ -744,6 +818,7 @@ header{
         font-size: 1.7rem;
         line-height: 2rem;
     }
+    
     /* section contact */
   .contact-section {
     width: 100%;

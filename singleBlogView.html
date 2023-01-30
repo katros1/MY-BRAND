@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="styles2.css">
     <link rel="icon" href="img\logo.png" type="image/x-icon">
 </head>
-<body>
+<body onload="blogPost()">
+
     <div class="left-container">
         <a href="HomePage.html"><img src="img/logo.png" alt="logo" class="logo"></a>
        <br> <div class="catediv">
@@ -21,76 +22,22 @@
         <h3>HTML & CSS</h3><br>        
 
        </div></div>
-    <article class="blog-article" style="border-top: 3px solid #45c8f0;">
-        <h1>How to Create a Database Using the MongoDB Atlas UI
-        </h1>
+       
+       <div class="content1">
+       <div class="blog-article" style="border-top: 3px solid #45c8f0;">
+    
+
         
-        <div>
-            <img src="img/mongobd.png" alt="">
-        
+       </div>
+       <div class="backarrow">
+        <a href="BlogPage2.html"><i class="fa-solid fa-arrow-left"></i> Back to blog </a> 
         </div>
-        <p>MongoDB has been at the forefront of application development for developers and enterprises over the past decade. According to TechRepublic, over 35,000 Fortune 500 companies and startups alike have been utilizing MongoDB for mainstream data infrastructure. One of the key drivers of the shift from virtual machines to the full use of cloud was MongoDB’s launching of Atlas, six years ago.
 
-        </p>   
-        <br><br><br>
-
-        <h3>What is MongoDB Atlas?
-        </h3><br><br>
-         <h3>1. Create Your First Cluster
-        </h3><br><br>
-        <p>Before proceeding, we also advise that you have an updated version of JavaScript installed. This tutorial will focus on connecting to MongoDB Atlas from your local Node.js or Express.js environment. To create an account and access Atlas cloud services, you’ll need to go to the MongoDB homepage and press the ‘Create a free database now’ button. This will redirect you to the cluster creation wizard and lead you to choose a plan for yourself.
-
-        </p><br><br>
-
-        <h3>2. Setup The Cluster
-        </h3>
-        <p>Assuming you have no clusters set up yet, you’ll need to click ‘Build a cluster’, and select a Cloud Provider and Region. After this step, you can name your cluster – take note that the name cannot be changed once it’s created. You can also configure any necessary options as you deem fit. MongoDB will take about 5-10 minutes to create your cluster, so a bit of patience is needed.
-
-        </p><br><br>
-        <h3>3. Obtain The Connection String
-        </h3>
-        <p>Now that you have a cluster, you’ll need a valid connection string to connect it to your application. To obtain this, you’ll need to first add the Database User and IP address of your current machine by going to the ‘Security’ tab to whitelist your IP address. Then head to the ‘Overview’ tab and press ‘Connect’, which will trigger a dialogue. Take note that you also have to select Node.js to save the connection string.
-
-        </p>
-        <h3>4. Mongoose Installation
-        </h3>
-        <p>
-            To code, you’ll also need to install Mongoose, which is a JavaScript object-oriented programming library that connects MongoDB and the Node. Use the following code in db.js.:
-
-
-        </p>
-        <br>
-        <div><img src="img/mongobd_cmd.jpg" alt=""></div>
-
-        <br><br><br>
-
-        <h3>5. Connecting Clusters and Managing Documents
-        </h3>
-        <p>The connection string you’ve previously received will mention a database named ‘test’. A MongoDB database is composed of one or more collections, and the free tier cluster on MongoDB Atlas can have a maximum of 500 collections. So if you’ve reached this far, congratulations – you’ve successfully created a basic database using the MongoDB Atlas UI! The next best step would be to learn MongoDB commands to navigate databases better.
-
-        </p>
-        <h3>Conclusion
-        </h3>
-        <p>If you are adamant about integrating MongoDB Atlas into your JavaScript projects, we have plenty of articles that can help you figure out the best way to go about it. That said, it’s an extremely beneficial platform for developers and enterprises alike, and is likely to become even more popular in the near future.
-
-        </p>
-
-      <div class="backarrow">
-       <a href="BlogPage.html"><i class="fa-solid fa-arrow-left"></i> Back to blog </a> 
-
-      </div> 
-        
-          
-    </article>
-
-  
-
-
-    <div class="form2">
+       <div class="form2">
         <h3>FELL FREE TO LEAVE A COMMENT:</h3><br>
         <form class="contactBlog2" id="contactBlog2">
             <div class="f1">
-                <input class="inputrectBlog2" type="text" placeholder="Name"/>
+                <input class="inputrectBlog2" type="text" placeholder="Name" id="inputrectBlog1"/>
                <div class="formControl2">
                 <input class="inputrectBlog2" id="inputrectBlog2" type="email" placeholder="Email"/>
                 <small>Error message</small>
@@ -110,10 +57,10 @@
               </div></button>
               <div class="sentMessage">Message sent</div>
         </form>
-    </div>
+    </div></div>
 
-
-   </div>
-   <script src="functionality3.js"></script> 
-    </body>
+  <script src="functionality3.js"></script>
+    <script src="singleBlogPosting.js"></script>
+   
+</body>
 </html>

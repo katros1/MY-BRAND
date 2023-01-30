@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="styles2.css">
         <link rel="icon" href="img\logo.png" type="image/x-icon">
     </head> 
-    <body>
+    <body onload="displayQuery()">
         <header>
             <div>
                 <div class="btns-container">
@@ -39,96 +39,20 @@
             </div>
         </aside>
 
-       <div class="dashtitle"><h3>Manage Querries</h3></div> 
-        <form action="" class="dashform">
-            <!--first query -->
+       <div class="dashtitleQ"><h3>Manage Querries</h3></div> 
+        <div class="dashform">
 
-            <div class="Queryform">
-                <section class="topsection"> <div class="qname">Kamariza  </div>
-                     <div class="tel">  
-                        tel:0784567
-                    </div>
-                    <div class="Email">
-                        Email:kamali@gmail.com
-                    </div>
 
-                    <div class="qButton2">
-                        <button class="QueryButton1">
-                                   contact Author
-                        </button>
-                                <button class="QueryButton2">
-                                    Delete Query
-                                </button>
-                    </div>
-                </section>
-                <p>I’m a Front-End Developer located in Poland. I have a serious passion for UI effects, animations
-                    and creating intuitive, dynamic user experiences.</p>
-                    
-               </div> <hr>
-
-               <!--another query -->
-               <div class="Queryform1">
-                <section class="topsection1"> <div class="qname">Kamariza  </div> <div class="tel">  tel:0784567</div>
-                    <div class="Email">Email:kamali@gmail.com</div>
-                    <div class="qButton2">
-                        <button class="QueryButton1">
-                                   contact Author
-                        </button>
-                                <button class="QueryButton2">
-                                    Delete Query
-                                </button>
-                    </div>
-                </section>
-                <p>I’m a Front-End Developer located in Poland. I have a serious passion for UI effects, animations
-                and creating intuitive, dynamic user experiences.</p>
-               </div><hr>
-
-               <!--another query -->
-               <div class="Queryform2">
-                <section class="topsection2"> <div class="qname">Kamariza  </div> <div class="tel">  tel:0784567</div>
-                    <div class="Email">Email:kamali@gmail.com</div>
-                    <div class="qButton2">
-                        <button class="QueryButton1">
-                                   contact Author
-                        </button>
-                                <button class="QueryButton2">
-                                    Delete Query
-                                </button>
-                
-                </section>
-                <p>I’m a Front-End Developer located in Poland. I have a serious passion for UI effects, animations
-                and creating intuitive, dynamic user experiences.</p>
-               
-               </div><hr>
-
-               <!--another query -->
-               <div class="Queryform3"> 
-                <section class="topsection3"> <div class="qname">Kamariza  </div> <div class="tel">  tel:0784567</div>
-                <div class="Email">Email:kamali@gmail.com</div>
-                <div class="qButton2">
-                    <button class="QueryButton1">
-                               contact Author
-                    </button>
-                            <button class="QueryButton2">
-                                Delete Query
-                            </button>
-               </section>
-
-                <p>I’m a Front-End Developer located in Poland. I have a serious passion for UI effects, animations
-                and creating intuitive, dynamic user experiences.</p>
-
-                </div>
-               </div>
-
-        </form>
+        </div>
 
         <!--end of query form -->
         <div class="topRightCorner">
-            <div class="RoundedCircle">K</div>
-            <a href="index.html" id="Logout">Logout</a>
+            <div class="RoundedCircle1">K</div>
+            <a href="index.html" id="Logout1">Logout   <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </div>
-        <p class="copyRight1">©Katros website.All rights reserved</p>
-    </div>
+        <p class="copyRight2">©Katros website.All rights reserved</p>
     <script src="functionality.js"></script>
+    <script src="storingQueries.js"></script>
+    <script src="deleteQuery.js"></script>
     </body>
     </html>

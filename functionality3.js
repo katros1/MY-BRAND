@@ -1,7 +1,7 @@
 const textInput = document.getElementById('textAreaBlog2');
 const emailInput = document.getElementById('inputrectBlog2');
 const frmInput = document.getElementById('contactBlog2'); 
-
+const nameInput = document.getElementById('inputrectBlog1');
 
 
 frmInput.addEventListener('submit' , (e) => {
@@ -24,11 +24,27 @@ frmInput.addEventListener('submit' , (e) => {
              
     } else{
       setSuccess(textInput.parentElement , 'comment sent to Author. Thank you!')
+      storeComment(); 
       emailInput.value = ''
       textInput.value = ''
+     
   }
     
 }
+
+function storeComment(){
+  if(localStorage.getItem('comment') == null){
+
+    localStorage.setItem('comment' , '[]')
+    
+  }
+
+  var comments = JSON.parse(localStorage.getItem('comment'))
+  comments.push({'name': nameInput.value, 'email': emailInput.value, 'comment': textInput.value, 'id': comments.length+1});
+  localStorage.setItem('comment' , JSON.stringify(comments));
+
+}
+
   
   function setErrorLn(input, message){
   const formcontrol = input.parentElement;

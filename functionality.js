@@ -3,10 +3,11 @@ const buttonT = document.querySelector('.times')
 const sideB = document.querySelector('.aside')
 const nameInput = document.querySelector('.name')
 const emailInput = document.querySelector('.email')
-const subjectInput = document.querySelector('.subject')
+const telInput = document.querySelector('.tel')
 const textareaInput = document.querySelector('.textarea')
 const contactForm = document.querySelector('.contact-form')
 
+// the side bar
 
 buttonBr.addEventListener('click', () => action('open'))
 buttonT.addEventListener('click', () => action('close'))
@@ -23,6 +24,7 @@ const action = (navCondition) => {
   }
 }
 
+//contact validation
 
 contactForm.addEventListener('submit', (evt) => {
   evt.preventDefault()
@@ -56,10 +58,19 @@ const validateInput = () => {
     setSuccess(emailInput.parentElement)
     setSuccess(textareaInput.parentElement)
     showMessage('Message sent to Author', '#08fdd8')
+    
+    if(localStorage.getItem('Query')== null){
+     
+      localStorage.setItem('Query' ,'[]') 
+
+    }
+    var query = JSON.parse(localStorage.getItem('Query'));
+    query.push({'name':nameInput.value ,'tel':telInput.value , 'email':emailInput.value , 'Message':textareaInput.value , 'id':query.length + 1});
+    localStorage.setItem('Query' , JSON.stringify(query));
     textareaInput.value = ''
     emailInput.value = ''
     nameInput.value = ''
-    subjectInput.value = ''
+    telInput.value = ''
   }
   
 }
@@ -71,6 +82,10 @@ const setError = (input) => {
     input.classList.add('error')
   }
 }
+
+
+//success pop-up
+
 const setSuccess = (input) => {
   if (input.classList.contains('error')) {
     input.classList.remove('error')
@@ -98,43 +113,13 @@ const showMessage = (message, updateColor) => {
 
 
 
-/* create blog */
 
 
-const aboutInput =document.getElementById('name')
-const titleInput = document.getElementById('subject')
-const formInput = document.getElementById('contact-form')
-
-formInput.addEventListener('submit' , (e) => {
-    e.preventDefault();
-    validate();
-  });
 
 
-  function validate() {
-    let title = titleInput.value.trim();
-    if(!title){
-     ErrorM(titleInput, 'Please enter the blog title')
 
-    }else if(title.length<10){
-      ErrorM(titleInput , 'short title')
-    }else if(text ===''){
-        
-    }
-  }
-function ErrorM(input , message){
-    const blogform = input.parentElement;
-    const content = blogform.querySelector('small')
-    content.innerText = message;
-    blogform.className = "blogForm eror"
 
-}
-$('contact-form').on('submit', function (e) {
-  if ($('editor_selector').froalaEditor('core.isEmpty')) {
-    e.preventDefault();
 
-    ErrorM(textInput, 'Please enter the blog title') // Display error message.
 
-    return false;
-  }
-});
+
+
