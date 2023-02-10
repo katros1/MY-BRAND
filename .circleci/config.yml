@@ -16,6 +16,8 @@ jobs:
       - run:
           command: npm run build
           name: Build app
+       - run:
+          command: npm i --y
      -- run:
           command: cd learn-express
          
