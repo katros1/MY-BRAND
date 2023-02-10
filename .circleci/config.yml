@@ -16,6 +16,9 @@ jobs:
       - run:
           command: npm run build
           name: Build app
+     -- run:
+          command: cd learn-express
+         
       - persist_to_workspace:
           root: ~/project
           paths:
