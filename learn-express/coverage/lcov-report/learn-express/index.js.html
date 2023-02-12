@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">8.69% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>23/23</span>
+                <span class='fraction'>2/23</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">8.69% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>23/23</span>
+                <span class='fraction'>2/23</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -156,42 +156,42 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -221,44 +221,44 @@ import bodyParser from "body-parser";
 const app = express();
 &nbsp;
 mongoose.connect("mongodb+srv://Katros:babu02@cluster0.z4lsky9.mongodb.net/test")
-.then(() =&gt; {
+.then(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
     
-    app.use(json())
+<span class="cstat-no" title="statement not covered" >    app.use(json())</span>
 &nbsp;
-    passport.use(jwtStrategy);
-    app.use(passport.initialize());
+<span class="cstat-no" title="statement not covered" >    passport.use(jwtStrategy);</span>
+<span class="cstat-no" title="statement not covered" >    app.use(passport.initialize());</span>
 &nbsp;
 &nbsp;
-cloudinary.config({
+<span class="cstat-no" title="statement not covered" >cloudinary.config({</span>
     cloud_name: "dboqnapgi",
     api_key: "852886672871578",
     api_secret: "CmYX-tNp9AfbGl_NSzK38qbhbGU",
   });
 &nbsp;
 &nbsp;
-const storage = new CloudinaryStorage({
+const storage = <span class="cstat-no" title="statement not covered" >new CloudinaryStorage({</span>
     cloudinary,
     params: {
       folder: "DEV",
     },
   });
-const upload = multer({ storage });
+const upload = <span class="cstat-no" title="statement not covered" >multer({ storage });</span>
 &nbsp;
-app.get("/api/v1/blogs", findBlogs)
-app.post("/api/v1/blogs", isAuth(passport),upload.single("Image"), blogValid, createBlog)
-app.get("/api/v1/blogs/:id", findBlog)
-app.patch("/api/v1/blogs/:id",isAuth(passport), updateBlog)
-app.delete("/api/v1/blogs/:id",isAuth(passport), deleteBlog)
-app.post("/api/v1/messages",qryvalid, sendQuery)
-app.get("/api/v1/messages",isAuth(passport), readQuery)
-app.delete("/api/v1/messages/:id",isAuth(passport) ,deleteQuery)
-app.post("/api/v1/auth/login",loginValid, loginMssg)
-app.post("/api/v1/auth/signUp",Uservalid, signUpMssg)
-app.post("/api/v1/blogs/:id/comments", cmmtvalid ,commentDisplay)
-app.get("/api/v1/blogs/:id/comments", findComments)
-app.post("/api/v1/blogs/:id/likes",isAuth(passport),auth, likesDisplay)
-app.listen(8000, () =&gt; {
-    console.log("Server has started!");
+<span class="cstat-no" title="statement not covered" >app.get("/api/v1/blogs", findBlogs)</span>
+<span class="cstat-no" title="statement not covered" >app.post("/api/v1/blogs", isAuth(passport),upload.single("Image"), blogValid, createBlog)</span>
+<span class="cstat-no" title="statement not covered" >app.get("/api/v1/blogs/:id", findBlog)</span>
+<span class="cstat-no" title="statement not covered" >app.patch("/api/v1/blogs/:id",isAuth(passport), updateBlog)</span>
+<span class="cstat-no" title="statement not covered" >app.delete("/api/v1/blogs/:id",isAuth(passport), deleteBlog)</span>
+<span class="cstat-no" title="statement not covered" >app.post("/api/v1/messages",qryvalid, sendQuery)</span>
+<span class="cstat-no" title="statement not covered" >app.get("/api/v1/messages",isAuth(passport), readQuery)</span>
+<span class="cstat-no" title="statement not covered" >app.delete("/api/v1/messages/:id",isAuth(passport) ,deleteQuery)</span>
+<span class="cstat-no" title="statement not covered" >app.post("/api/v1/auth/login",loginValid, loginMssg)</span>
+<span class="cstat-no" title="statement not covered" >app.post("/api/v1/auth/signUp",Uservalid, signUpMssg)</span>
+<span class="cstat-no" title="statement not covered" >app.post("/api/v1/blogs/:id/comments", cmmtvalid ,commentDisplay)</span>
+<span class="cstat-no" title="statement not covered" >app.get("/api/v1/blogs/:id/comments", findComments)</span>
+<span class="cstat-no" title="statement not covered" >app.post("/api/v1/blogs/:id/likes",isAuth(passport),auth, likesDisplay)</span>
+<span class="cstat-no" title="statement not covered" >app.listen(8000, <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    console.log("Server has started!");</span>
 });
 &nbsp;
 })
@@ -271,7 +271,7 @@ export default app
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-10T09:29:21.465Z
+                at 2023-02-12T17:20:29.013Z
             </div>
         <script src="../prettify.js"></script>
         <script>
