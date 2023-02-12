@@ -5,23 +5,27 @@ orbs:
   heroku: circleci/heroku@1.2.6
 
 jobs:
-
-  docker:
+  build:
+    docker:
       - image: node:18.13.0
     working_directory: ~/MY-BRAND/learn-express
     steps:
-      - checkout
-         path: ~/MY-BRAND
-      - node/install-packages:
-          pkg-manager: npm install
+      - checkout:
+          path: ~/MY-BRAND
+      - run:
+          name: Install dependencies
+          command: npm install
+          
       - run:
           command: npm test
           name: Run tests
       - run:
           command: npm run build
           name: Build app
+      - persist_to_workspace:
+          root: ~/project
+          paths:
             - .
-
  
 
             
