@@ -17,8 +17,9 @@ jobs:
           command: npm i jest    
           
       - run:
-          command: npm run test
-          name: Run tests
+          name: Run tests      
+          command: npm run test  --coverage -- --verbose
+          
       - run:
           command: npm run build
           name: Build app
