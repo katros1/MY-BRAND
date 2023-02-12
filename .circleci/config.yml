@@ -1,46 +1,36 @@
-version: 2.1
+version: 2.4
+
 orbs:
   node: circleci/node@5.0.2
   heroku: circleci/heroku@1.2.6
 
 jobs:
-  build_and_test: 
-    executor: node/default 
+  build:
+    docker:
+      - image: node:18.13.0
+    working_directory: ~/MY-BRAND/learn-express
     steps:
-      - checkout
-      - node/install-packages:
-          pkg-manager: npm
+      - checkout:
+          path: ~/MY-BRAND
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Install devDependencies
+          command: npm install --save-dev    
+          
       - run:
           command: npm run test
           name: Run tests
       - run:
           command: npm run build
           name: Build app
-       - run:
-          command: npm i --y
-     -- run:
-          command: cd learn-express
-         
       - persist_to_workspace:
           root: ~/project
           paths:
             - .
+ 
 
-  deploy: 
-    executor: heroku/default
-    steps:
-      - attach_workspace:
-          at: ~/project
-      - heroku/deploy-via-git:
-          force: true 
-
-workflows:
-  test_my_app:
-    jobs:
-      - build_and_test
-      - deploy:
-          requires:
-            - build_and_test 
-          filters:
-            branches:
-              only: main # only deploy when on main
+            
+     
+ 
