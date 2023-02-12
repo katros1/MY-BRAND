@@ -15,6 +15,9 @@ jobs:
       - run:
           name: Install dependencies
           command: npm install
+      - run:
+          name: Install devDependencies
+          command: npm install --save-dev    
           
       - run:
           command: npm run test
