@@ -13,8 +13,8 @@ jobs:
           name: Install dependencies
           command: npm install
       - run:
-          name: Install devDependencies
-          command: npm install jest    
+          name: Install jest
+          command: npm i jest    
           
       - run:
           command: npm run test
