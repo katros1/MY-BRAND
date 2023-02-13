@@ -20,8 +20,6 @@ jobs:
           name: Run tests      
           command: npm run test  --coverage --forceExit
           
-      
-            - .
  
 
             
