@@ -2,6 +2,9 @@ import request from "supertest";
 import app from "../index.js";
 import { mongoConnect, mongoDisconnect } from "../mongoconnect.js";
 import UserInfo from "../model/signUp.js";
+import { isAuth } from "../middleware/ath.js";
+import passport from "passport";
+import { jwtStrategy } from "../middleware/authorization.js";
 
 const blog = {
     title: "hallee",
@@ -179,6 +182,13 @@ test(" Find blog with valid blog_ID", async () =>{
         .post("/api/v1/blogs/63e4ac5c9afdae2d0140f0ae/likes")
         .expect(401)
         
+    })
+
+    test("Blogs likes on authorized user ", async () =>{
+        const response = await request(app)
+        .post("/api/v1/blogs/63e4ac5c9afdae2d0140f0ae/likes", isAuth(passport))
+        .expect(200)
+
     })
 
 

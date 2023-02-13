@@ -57,7 +57,7 @@ app.post("/api/v1/auth/login",loginValid, loginMssg)
 app.post("/api/v1/auth/signUp",Uservalid, signUpMssg)
 app.post("/api/v1/blogs/:id/comments", cmmtvalid ,commentDisplay)
 app.get("/api/v1/blogs/:id/comments", findComments)
-app.post("/api/v1/blogs/:id/likes",isAuth(passport),auth, likesDisplay)
+app.post("/api/v1/blogs/:id/likes",isAuth(passport), likesDisplay)
 app.listen(8000, () => {
     console.log("Server has started!");
 });
