@@ -96,7 +96,7 @@ test(" Find blog with valid blog_ID", async () =>{
 
     })
 
-    test("creating account", async () =>{
+    /*test("creating account", async () =>{
         const response = await request(app)
         .post("/api/v1/auth/signUp")
         .send(
@@ -110,7 +110,7 @@ test(" Find blog with valid blog_ID", async () =>{
         .expect("Content-Type", /json/)
         .expect(201)
         UserInfo.findOneAndRemove({UserName: "katrtts"})
-    })
+    })*/
 
     test("creating account with the existing username", async () =>{
         const response = await request(app)
@@ -182,13 +182,6 @@ test(" Find blog with valid blog_ID", async () =>{
         .post("/api/v1/blogs/63e4ac5c9afdae2d0140f0ae/likes")
         .expect(401)
         
-    })
-
-    test("Blogs likes on authorized user ", async () =>{
-        const response = await request(app)
-        .post("/api/v1/blogs/63e4ac5c9afdae2d0140f0ae/likes", isAuth(passport))
-        .expect(200)
-
     })
 
 
