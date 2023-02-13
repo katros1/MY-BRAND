@@ -20,12 +20,7 @@ jobs:
           name: Run tests      
           command: npm run test  --coverage --forceExit
           
-      - run:
-          command: npm run build
-          name: Build app
-      - persist_to_workspace:
-          root: ~/project
-          paths:
+      
             - .
  
 
