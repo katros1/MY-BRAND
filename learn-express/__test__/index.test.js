@@ -52,11 +52,11 @@ beforeAll(async () =>{
 
 
 
-afterAll(  () =>{
-    mongoDisconnect()  
+afterAll( async () =>{
+    await mongoDisconnect();  
 
     
-})
+}, 20000)
 test(" Display list of blogs", async () =>{
 const response = await request(app)
 .get("/api/v1/blogs")
