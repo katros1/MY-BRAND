@@ -267,7 +267,7 @@ export async function findComments(req , res) {
 						})
 						return res.status(200).send({
 					  		message:'Liked',
-					  		data:{}
+					  		
 					  	});
 
 					}else{
@@ -284,7 +284,7 @@ export async function findComments(req , res) {
 
 						return res.status(200).send({
 					  		message:'UnLiked',
-					  		data:{}
+					  		
 					  	});
 
 
