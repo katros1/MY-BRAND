@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.06% </span>
+                <span class="strong">59.13% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>54/93</span>
+                <span class='fraction'>55/93</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.88% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>53/90</span>
+                <span class='fraction'>54/90</span>
             </div>
         
             
@@ -632,24 +632,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -659,7 +648,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -943,35 +943,35 @@ export async function <span class="fstat-no" title="function not covered" >findC
 				UserId:current_user
 			}).then(async (blog_like)=&gt;{
 				try{
-					<span class="missing-if-branch" title="if path not taken" >I</span>if(!blog_like){
-						let blogLikeDoc=<span class="cstat-no" title="statement not covered" >new blogLikes({</span>
+					if(!blog_like){
+						let blogLikeDoc=new blogLikes({
 							blogId:blog_id,
 							UserId:current_user
 						});
-						let likeData=<span class="cstat-no" title="statement not covered" >await blogLikeDoc.save();</span>
-<span class="cstat-no" title="statement not covered" >						await Blog.updateOne({</span>
+						let likeData=await blogLikeDoc.save();
+						await Blog.updateOne({
 							_id:blog_id
 						},{
 							$push:{blogLikes:likeData._id}
 						})
-<span class="cstat-no" title="statement not covered" >						return res.status(200).send({</span>
+						return res.status(200).send({
 					  		message:'Liked',
 					  		
 					  	});
 &nbsp;
-					}else{
+					}else<span class="missing-if-branch" title="else path not taken" >E</span>{
 &nbsp;
-						await  blogLikes.deleteOne({
+<span class="cstat-no" title="statement not covered" >						await  blogLikes.deleteOne({</span>
 							_id:blog_like._id
 						});
 &nbsp;
-						await Blog.updateOne({
+<span class="cstat-no" title="statement not covered" >						await Blog.updateOne({</span>
 							_id:blog_like.blog_id
 						},{
 							$pull:{blogLikes:blog_like._id}
 						})
 &nbsp;
-						return res.status(200).send({
+<span class="cstat-no" title="statement not covered" >						return res.status(200).send({</span>
 					  		message:'UnLiked',
 					  		
 					  	});
@@ -1006,7 +1006,7 @@ export async function <span class="fstat-no" title="function not covered" >findC
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-13T16:40:55.679Z
+                at 2023-02-13T17:56:25.529Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
