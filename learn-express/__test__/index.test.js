@@ -1,6 +1,7 @@
 import request from "supertest";
 import app from "../index.js";
 import { mongoConnect, mongoDisconnect } from "../mongoconnect.js";
+import path from 'path'
 import UserInfo from "../model/signUp.js";
 import { isAuth } from "../middleware/ath.js";
 import passport from "passport";
@@ -10,6 +11,9 @@ const blog = {
     title: "hallee",
     content: "halele luyayay",
 }
+
+
+let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia2F0cm9zIiwiVXNlck5hbWUiOiJrYXRyQGdtbS5jYyIsInVzZXJJZCI6IjYzZTM1OTkyMWE2NmNmM2MyMzJlZDJhMSIsImlhdCI6MTY3NTg2NTUyM30.WeTJHNrD_FE6ho_LLT_T8VeRrGmc-yo6xkV7VeRfjcg"
 const query = {
     name: "hello",
     email: "katros@gmail.com",
@@ -48,8 +52,10 @@ beforeAll(async () =>{
 
 
 
-afterAll( async () =>{
-    await mongoDisconnect()
+afterAll(  () =>{
+    mongoDisconnect()  
+
+    
 })
 test(" Display list of blogs", async () =>{
 const response = await request(app)
@@ -184,7 +190,46 @@ test(" Find blog with valid blog_ID", async () =>{
         
     })
 
+    test("get messages ", async () =>{
+        const response = await request(app)
+        .get("/api/v1/messages")
+        .set("Authorization", `Bearer ${token}`)
+      .expect(200)
+        
+        
+    })
 
+    test("Delete message ", async () =>{
+        const response = await request(app)
+        .delete("/api/v1/messages/63e5d6a72af7d00f3ae0d257")
+        .set("Authorization", `Bearer ${token}`)
+      .expect(404)
+        
+        
+    })
+
+
+    
+
+    test("make like on  ", async () =>{
+        const response = await request(app)
+        .post("/api/v1/blogs/63e5c0942653b2bfe8a5a4e0/likes")
+        .set("Authorization", `Bearer ${token}`)
+      .expect(200)
+        
+        
+    })
+
+    /*test("create blog ", async () =>{
+        const response = await request(app)
+        .post("/api/v1/blogs")
+        .set("Authorization", `Bearer ${token}`)
+        .field("title", blog.title)
+        .field("content", blog.content)
+        .field("Image", path.resolve(__dirname, "../img/Screenshot (24).png"))
+        .expect(201);
+        
+    },25000)*/
 
     
 })
