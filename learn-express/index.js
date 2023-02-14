@@ -14,6 +14,7 @@ import passport from "passport";
 import {v2 as cloudinary} from "cloudinary";
 import {CloudinaryStorage} from "multer-storage-cloudinary";
 import multer from "multer";
+import swaggerDocs from "./swager.js";
 import connectEnsureLogin from "connect-ensure-login";
 import UserInfo from "./model/signUp.js";
 import localStrategy from "passport-local"
@@ -45,21 +46,513 @@ const storage = new CloudinaryStorage({
   });
 const upload = multer({ storage });
 
+//---------- list of all blogs------------------------------//
+
+/**
+ * @openapi
+ * '/api/v1/blogs':
+ *  get:
+ *     tags:
+ *     - Blogs
+ *     summary: Get all Blogs
+ *     responses:
+ *       200:
+ *         description: Success
+ *         content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              items:
+ *                type: object
+ *                properties:
+ *                  id:
+ *                    type: number
+ *                  name:
+ *                    type: string
+ *         400:
+ *          description: Bad request
+ */
+
 app.get("/api/v1/blogs", findBlogs)
+
+
+
+
+
+
+//---------- Create a blog ------------------------------//
+
+/**
+ * @openapi
+ * '/api/v1/blogs':
+ *  post:
+ *     tags:
+ *     - Create_Blog
+ *     summary: Create a blog
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *           schema:
+ *            type: object
+ *            required:
+ *              - title
+ *              - content
+ *              - Image  
+ *            properties:
+ *              title:
+ *                type: string
+ *                default: hello
+ *              content:
+ *                type: string
+ *                default: greetings greetings
+ *              Image:
+ *                type: string 
+ *     responses:
+ *      201:
+ *        description: Created
+ *      409:
+ *        description: Conflict
+ *      404:
+ *        description: Not Found
+ */
+
+
 app.post("/api/v1/blogs", isAuth(passport),upload.single("Image"), blogValid, createBlog)
+
+
+
+
+
+
+//---------- Get a single a blog ------------------------------//
+
+/**
+ * @openapi
+ * '/api/v1/blogs/:id':
+ *  get:
+ *     tags:
+ *     - Single_Blog
+ *     summary: Get a single Blog
+ *     responses:
+ *       200:
+ *         description: Success
+ *         content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              items:
+ *                type: object
+ *                properties:
+ *                  id:
+ *                    type: number
+ *                  name:
+ *                    type: string
+ *         401:
+ *          description: Not found
+ */
+
 app.get("/api/v1/blogs/:id", findBlog)
+
+
+
+
+
+
+
+//---------- Update a blog ------------------------------//
+
+/**
+ * @openapi
+ * '/api/v1/blogs/:id':
+ *  patch:
+ *     tags:
+ *     - Update_Blog
+ *     summary: Create a hero
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *           schema:
+ *            type: object
+ *            required:
+ *              - id
+ *              - title
+ *              - content
+ *            properties:
+ *              id:
+ *                type: number
+ *                default: 2
+ *              title:
+ *                type: string
+ *                default: New Blog Title
+ *              content:
+ *                 type: string
+ *     responses:
+ *      201:
+ *        description: Created
+ *      409:
+ *        description: Conflict
+ *      404:
+ *        description: Not Found
+ */
+
 app.patch("/api/v1/blogs/:id",isAuth(passport), updateBlog)
+
+
+
+
+
+
+
+//---------- Delete Blog ------------------------------//
+
+
+/**
+ * @openapi
+ * '/api/hero/{id}':
+ *  delete:
+ *     tags:
+ *     - Delete_Blog
+ *     summary: Remove hero by id
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        description: The unique id of the blog
+ *        required: true
+ *     responses:
+ *      200:
+ *        description: Removed
+ *      400:
+ *        description: Bad request
+ *      404:
+ *        description: Not Found
+ */
+
 app.delete("/api/v1/blogs/:id",isAuth(passport), deleteBlog)
+
+
+
+
+
+
+
+
+//---------- Send a message ------------------------------//
+
+/**
+ * @openapi
+ * '/api/v1/messages':
+ *  post:
+ *     tags:
+ *     - Send_Message
+ *     summary: Type a message
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *           schema:
+ *            type: object
+ *            required:
+ *              - name
+ *              - email
+ *              - message 
+ *            properties:
+ *              name:
+ *                type: string
+ *                default: name
+ *              email:
+ *                type: string
+ *                default: valid email
+ *              message:
+ *                type: string
+ *                default: message here 
+ *     responses:
+ *      200:
+ *        description: Success
+ *      409:
+ *        description: Conflict
+ *      400:
+ *        description: Bad Request
+ */
+
 app.post("/api/v1/messages",qryvalid, sendQuery)
+
+
+
+//---------- Get messages ------------------------------//
+
+
+
+/**
+ * @openapi
+ * '/api/v1/messages':
+ *  get:
+ *     tags:
+ *     - Messages
+ *     summary: Get all messages
+ *     responses:
+ *       200:
+ *         description: Success
+ *         content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              items:
+ *                type: object
+ *                properties:
+ *                  id:
+ *                    type: number
+ *                  name:
+ *                    type: string
+ *                  email:
+ *                    type: string
+ *                  message: 
+ *                    type:string
+ *       400:
+ *         description: Bad request
+ */
+
 app.get("/api/v1/messages",isAuth(passport), readQuery)
+
+
+/**
+ * @openapi
+ * '/api/v1/messages/:id':
+ *  delete:
+ *     tags:
+ *     - Delete Message
+ *     summary: Remove message by id
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        description: The unique id of the message
+ *        required: true
+ *     responses:
+ *      200:
+ *        description: Removed
+ *      400:
+ *        description: Bad request
+ *      404:
+ *        description: Not Found
+ */
+
+
 app.delete("/api/v1/messages/:id",isAuth(passport) ,deleteQuery)
+
+
+//---------- login ------------------------------//
+
+
+/**
+ * @openapi
+ * '/api/v1/auth/login':
+ *  post:
+ *     tags:
+ *     - User Login
+ *     summary: login
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *           schema:
+ *            type: object
+ *            required:
+ *              - id
+ *              - UserName
+ *              - Password
+ *            properties:
+ *              id:
+ *                type: number
+ *                default: 2
+ *              UserName:
+ *                type: string
+ *                default: username
+ *              Password:
+ *                type: string
+ *                default: password
+ *     responses:
+ *      200:
+ *        description: Success
+ *      409:
+ *        description: Conflict
+ *      404:
+ *        description: Not Found
+ */
+
 app.post("/api/v1/auth/login",loginValid, loginMssg)
+
+
+
+
+//---------- Create account ------------------------------//
+
+
+/**
+ * @openapi
+ * '/api/v1/auth/signUp':
+ *  post:
+ *     tags:
+ *     - SignUp
+ *     summary: Create an Account
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *           schema:
+ *            type: object
+ *            required:
+ *              - id
+ *              - name
+ *              - UserName
+ *              - Password
+ *            properties:
+ *              id:
+ *                type: number
+ *                default: 2
+ *              name:
+ *                type: string
+ *                default: your name
+ *              UserName:
+ *                type: number
+ *                default: choose password
+ *              Password:
+ *                type: string
+ *                default: 123hhhh 
+ *     responses:
+ *      201:
+ *        description: Created
+ *      409:
+ *        description: Conflict
+ *      404:
+ *        description: Not Found
+ */
+
 app.post("/api/v1/auth/signUp",Uservalid, signUpMssg)
+
+
+
+//---------- Comments ------------------------------//
+
+
+
+/**
+ * @openapi
+ * '/api/v1/blogs/:id/comments':
+ *  post:
+ *     tags:
+ *     - Comment
+ *     summary: Leave a comment
+ *     requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *           schema:
+ *            type: object
+ *            required:
+ *              - id
+ *              - name
+ *              - email
+ *              - comment
+ *            properties:
+ *              id:
+ *                type: number
+ *                default: 2
+ *              name:
+ *                type: string
+ *                default: your name
+ *              email:
+ *                type: string
+ *                default: your email
+ *              comment:
+ *                type: string
+ *                default: comment here
+ *     responses:
+ *      201:
+ *        description: Created
+ *      409:
+ *        description: Conflict
+ *      404:
+ *        description: Not Found
+ */
+
 app.post("/api/v1/blogs/:id/comments", cmmtvalid ,commentDisplay)
+
+
+
+//---------- Comments ------------------------------//
+
+
+/**
+ * @openapi
+ * '/api/v1/blogs/:id/comments':
+ *  get:
+ *     tags:
+ *     - Comments
+ *     summary: Get all comments
+ *     responses:
+ *       200:
+ *         description: Success
+ *         content:
+ *          application/json:
+ *            schema:
+ *              type: array
+ *              items:
+ *                type: object
+ *                properties:
+ *                  id:
+ *                    type: number
+ *                  name:
+ *                    type: string
+ *                  email:
+ *                    type: number
+ *                  comment:
+ *                    type: string
+ *       400:
+ *         description: Bad request
+ */
+
 app.get("/api/v1/blogs/:id/comments", findComments)
+
+
+//------------- Likes ------------------------------//
+
+
+
+/**
+ * @openapi
+ * '/api/v1/blogs/:id/likes':
+ *  post:
+ *     tags:
+ *     - Likes
+ *     summary: Likes
+ *     responses:
+ *       200:
+ *         description: Success
+ *         content:
+ *          application/json:
+ *            schema:
+ *              type: array
+ *              items:
+ *                type: object
+ *                properties:
+ *                  id:
+ *                    type: number
+ *                  name:
+ *                    type: string
+ *       400:
+ *         description: Bad request
+ */
+
+
+
+
+
 app.post("/api/v1/blogs/:id/likes",isAuth(passport), likesDisplay)
+
 app.listen(8000, () => {
     console.log("Server has started!");
+    swaggerDocs(app, 8000)
 });
 
 })

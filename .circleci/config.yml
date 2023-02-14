@@ -5,6 +5,8 @@ jobs:
   build:
     docker:
       - image: node:18.13.0
+      environment:
+       COVERALLS_REPO_TOKEN: 4Gyz2UxXVZy87gPU1thYWmwlEUo0TsawY
     working_directory: ~/MY-BRAND/learn-express
     steps:
       - checkout:
@@ -19,6 +21,9 @@ jobs:
       - run:
           name: Run tests      
           command: npm run test  --coverage --forceExit
+      - run:
+          name: Upload coverage to Coveralls
+          command: npx coveralls < coverage/lcov.info    
           
  
 

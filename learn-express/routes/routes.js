@@ -35,6 +35,29 @@ export async function findBlogs(req , res) {
     const blogs = await Blog.find();
     res.send({Blogs: blogs});
  }
+
+
+/*
+
+
+
+
+
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
  export async function  createBlog(req, res) {
     const blog = new Blog({
 		title:req.body.title,
