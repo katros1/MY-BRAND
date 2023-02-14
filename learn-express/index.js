@@ -46,6 +46,23 @@ const storage = new CloudinaryStorage({
   });
 const upload = multer({ storage });
 
+
+
+/**
+ * @openapi
+ * components:
+ *   securitySchemes:
+ *     bearerAuth:
+ *       type: http
+ *       scheme: bearer
+ *       bearerFormat: JWT
+ */
+
+
+
+
+
+
 //---------- list of all blogs------------------------------//
 
 /**
@@ -89,6 +106,8 @@ app.get("/api/v1/blogs", findBlogs)
  *     tags:
  *     - Create_Blog
  *     summary: Create a blog
+ *     security:
+ *       - bearerAuth: []
  *     requestBody:
  *      required: true
  *      content:
@@ -107,7 +126,7 @@ app.get("/api/v1/blogs", findBlogs)
  *                type: string
  *                default: greetings greetings
  *              Image:
- *                type: string 
+ *                type: file 
  *     responses:
  *      201:
  *        description: Created
@@ -129,27 +148,23 @@ app.post("/api/v1/blogs", isAuth(passport),upload.single("Image"), blogValid, cr
 
 /**
  * @openapi
- * '/api/v1/blogs/:id':
+ * '/api/v1/blogs/{id}':
  *  get:
  *     tags:
- *     - Single_Blog
- *     summary: Get a single Blog
+ *     - Find_Blog
+ *     summary: Find blog by id
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        description: The unique id of the blog
+ *        required: true
  *     responses:
- *       200:
- *         description: Success
- *         content:
- *          application/json:
- *            schema:
- *              type: object
- *              items:
- *                type: object
- *                properties:
- *                  id:
- *                    type: number
- *                  name:
- *                    type: string
- *         401:
- *          description: Not found
+ *      200:
+ *        description: Success
+ *      400:
+ *        description: Bad request
+ *      404:
+ *        description: Not Found
  */
 
 app.get("/api/v1/blogs/:id", findBlog)
@@ -164,11 +179,18 @@ app.get("/api/v1/blogs/:id", findBlog)
 
 /**
  * @openapi
- * '/api/v1/blogs/:id':
+ * '/api/v1/{id}':
  *  patch:
  *     tags:
  *     - Update_Blog
- *     summary: Create a hero
+ *     summary: Update Blog
+  *     security:
+ *       - bearerAuth: [] 
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        description: The unique id of the blog
+ *        required: true
  *     requestBody:
  *      required: true
  *      content:
@@ -176,23 +198,23 @@ app.get("/api/v1/blogs/:id", findBlog)
  *           schema:
  *            type: object
  *            required:
- *              - id
  *              - title
  *              - content
+ *              - Image  
  *            properties:
- *              id:
- *                type: number
- *                default: 2
  *              title:
  *                type: string
- *                default: New Blog Title
+ *                default: hello
  *              content:
- *                 type: string
+ *                type: string
+ *                default: greetings greetings
+ *              Image:
+ *                type: file 
  *     responses:
  *      201:
- *        description: Created
- *      409:
- *        description: Conflict
+ *        description: Updated
+ *      400:
+ *        description: Bad request
  *      404:
  *        description: Not Found
  */
@@ -210,11 +232,13 @@ app.patch("/api/v1/blogs/:id",isAuth(passport), updateBlog)
 
 /**
  * @openapi
- * '/api/hero/{id}':
+ * '/api/v1/blogs/{id}':
  *  delete:
  *     tags:
  *     - Delete_Blog
  *     summary: Remove hero by id
+ *     security:
+ *       - bearerAuth: [] 
  *     parameters:
  *      - name: id
  *        in: path
@@ -291,6 +315,8 @@ app.post("/api/v1/messages",qryvalid, sendQuery)
  *     tags:
  *     - Messages
  *     summary: Get all messages
+ *     security:
+ *       - bearerAuth: []  
  *     responses:
  *       200:
  *         description: Success
@@ -316,13 +342,19 @@ app.post("/api/v1/messages",qryvalid, sendQuery)
 app.get("/api/v1/messages",isAuth(passport), readQuery)
 
 
+
+//---------- Delete messages ------------------------------//
+
+
 /**
  * @openapi
- * '/api/v1/messages/:id':
+ * '/api/v1/messages/{id}':
  *  delete:
  *     tags:
  *     - Delete Message
  *     summary: Remove message by id
+ *     security:
+ *       - bearerAuth: [] 
  *     parameters:
  *      - name: id
  *        in: path
@@ -358,13 +390,9 @@ app.delete("/api/v1/messages/:id",isAuth(passport) ,deleteQuery)
  *           schema:
  *            type: object
  *            required:
- *              - id
  *              - UserName
  *              - Password
  *            properties:
- *              id:
- *                type: number
- *                default: 2
  *              UserName:
  *                type: string
  *                default: username
@@ -402,14 +430,10 @@ app.post("/api/v1/auth/login",loginValid, loginMssg)
  *           schema:
  *            type: object
  *            required:
- *              - id
  *              - name
  *              - UserName
  *              - Password
  *            properties:
- *              id:
- *                type: number
- *                default: 2
  *              name:
  *                type: string
  *                default: your name
@@ -438,11 +462,16 @@ app.post("/api/v1/auth/signUp",Uservalid, signUpMssg)
 
 /**
  * @openapi
- * '/api/v1/blogs/:id/comments':
+ * '/api/v1/blogs/{id}/comments':
  *  post:
  *     tags:
  *     - Comment
  *     summary: Leave a comment
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        description: The unique id of the message
+ *        required: true 
  *     requestBody:
  *      required: true
  *      content:
@@ -450,14 +479,10 @@ app.post("/api/v1/auth/signUp",Uservalid, signUpMssg)
  *           schema:
  *            type: object
  *            required:
- *              - id
  *              - name
  *              - email
  *              - comment
  *            properties:
- *              id:
- *                type: number
- *                default: 2
  *              name:
  *                type: string
  *                default: your name
@@ -469,7 +494,7 @@ app.post("/api/v1/auth/signUp",Uservalid, signUpMssg)
  *                default: comment here
  *     responses:
  *      201:
- *        description: Created
+ *        description: Send Successfully
  *      409:
  *        description: Conflict
  *      404:
@@ -485,11 +510,16 @@ app.post("/api/v1/blogs/:id/comments", cmmtvalid ,commentDisplay)
 
 /**
  * @openapi
- * '/api/v1/blogs/:id/comments':
+ * '/api/v1/blogs/comments':
  *  get:
  *     tags:
  *     - Comments
  *     summary: Get all comments
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        description: The unique id of the blog
+ *        required: true 
  *     responses:
  *       200:
  *         description: Success
@@ -500,8 +530,6 @@ app.post("/api/v1/blogs/:id/comments", cmmtvalid ,commentDisplay)
  *              items:
  *                type: object
  *                properties:
- *                  id:
- *                    type: number
  *                  name:
  *                    type: string
  *                  email:
@@ -512,7 +540,7 @@ app.post("/api/v1/blogs/:id/comments", cmmtvalid ,commentDisplay)
  *         description: Bad request
  */
 
-app.get("/api/v1/blogs/:id/comments", findComments)
+app.get("/api/v1/blogs/comments", findComments)
 
 
 //------------- Likes ------------------------------//
@@ -521,11 +549,18 @@ app.get("/api/v1/blogs/:id/comments", findComments)
 
 /**
  * @openapi
- * '/api/v1/blogs/:id/likes':
+ * '/api/v1/blogs/{id}/likes':
  *  post:
  *     tags:
  *     - Likes
  *     summary: Likes
+ *     security:
+ *       - bearerAuth: [] 
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        description: The unique id of the blog
+ *        required: true 
  *     responses:
  *       200:
  *         description: Success
