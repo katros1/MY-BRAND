@@ -1,9 +1,32 @@
-version: 2.4
+# version: 2.4
+# jobs:
+#   build:
+#     docker:
+#       - image: node:18.13.0
+#     working_directory: ~/MY-BRAND
+#     steps:
+#       - checkout:
+#           path: ~/MY-BRAND
+#       - run:
+#           name: Install dependencies
+#           command: npm install
+#       - run:
+#           name: Install jest
+#           command: npm i jest  
+          
+#       - run:
+#           name: Run tests      
+#           command: npm run test  --coverage --forceExit   
+          
+ 
+
 jobs:
   build:
     docker:
       - image: node:18.13.0
-    working_directory: ~/MY-BRAND/learn-express
+    environment:
+      COVERALLS_REPO_TOKEN: kBAl3N5udTEWUMpUPr5s2FrceeWPYJFBA
+    working_directory: ~/MY-BRAND
     steps:
       - checkout:
           path: ~/MY-BRAND
@@ -11,15 +34,10 @@ jobs:
           name: Install dependencies
           command: npm install
       - run:
-          name: Install jest
-          command: npm i jest  
-          
+          name: Run tests
+          command: npm test --coverage -- --verbose
       - run:
-          name: Run tests      
-          command: npm run test  --coverage --forceExit   
-          
- 
-
-            
+          name: Upload coverage to Coveralls
+          command: npx coveralls < coverage/lcov.info
      
  
