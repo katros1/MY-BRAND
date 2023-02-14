@@ -2,6 +2,7 @@ version: 2.4
 
 
 jobs:
+  build:
     docker:
       - image: node:18.13.0
     working_directory: ~/MY-BRAND/learn-express
@@ -18,9 +19,7 @@ jobs:
       - run:
           name: Run tests      
           command: npm run test  --coverage --forceExit
-      - run:
-          name: Upload coverage to Coveralls
-          command: npx coveralls < coverage/lcov.info    
+          
           
  
 
