@@ -4,10 +4,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest --coverage  --detectOpenHandles  --forceExit",
+    "test": "jest --coverage  --detectOpenHandles  --forceExit  && coveralls < coverage/lcov.info",
     "dev": "nodemon index.js",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
-
   },
   "keywords": [],
   "author": "",

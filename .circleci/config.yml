@@ -1,7 +1,4 @@
 version: 2.4
-orbs:
-  coveralls: coveralls/coveralls@x.y.z
-
 jobs:
   build:
     docker:
@@ -19,10 +16,7 @@ jobs:
           
       - run:
           name: Run tests      
-          command: npm run test  --coverage --forceExit
-      - run:
-          name: Upload coverage to Coveralls
-          command: npx coveralls < coverage/lcov.info    
+          command: npm run test  --coverage --forceExit   
           
  
 
