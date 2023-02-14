@@ -4,9 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest --coverage  --detectOpenHandles  --forceExit  && coveralls < coverage/lcov.info",
-    "dev": "nodemon index.js",
-    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    "test": "jest --coverage  --detectOpenHandles  --forceExit  && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
