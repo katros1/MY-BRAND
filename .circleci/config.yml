@@ -1,5 +1,6 @@
 version: 2.4
-
+orbs:
+  coveralls: coveralls/coveralls@x.y.z
 
 jobs:
   build:
@@ -15,10 +16,6 @@ jobs:
       - run:
           name: Install jest
           command: npm i jest  
-
-      - run: 
-            export COVERALLS_REPO_TOKEN: 4Gyz2UxXVZy87gPU1thYWmwlEUo0TsawY
-      
           
       - run:
           name: Run tests      
