@@ -5,3 +5,5 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/katros1/MY-BRAND/badge.svg?branch=ft-node-endpoints)](https://coveralls.io/github/katros1/MY-BRAND?branch=ft-node-endpoints)
 
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
