@@ -48,6 +48,9 @@ const upload = multer({ storage });
 
 
 
+//---------- Authorization ------------------------------//
+
+
 /**
  * @openapi
  * components:
@@ -78,7 +81,7 @@ const upload = multer({ storage });
  *         content:
  *          application/json:
  *            schema:
- *              type: object
+ *              type: array
  *              items:
  *                type: object
  *                properties:
@@ -111,7 +114,7 @@ app.get("/api/v1/blogs", findBlogs)
  *     requestBody:
  *      required: true
  *      content:
- *        application/json:
+ *        multipart/form-data:
  *           schema:
  *            type: object
  *            required:
@@ -179,7 +182,7 @@ app.get("/api/v1/blogs/:id", findBlog)
 
 /**
  * @openapi
- * '/api/v1/{id}':
+ * '/api/v1/blogs/{id}':
  *  patch:
  *     tags:
  *     - Update_Blog
@@ -220,7 +223,6 @@ app.get("/api/v1/blogs/:id", findBlog)
  */
 
 app.patch("/api/v1/blogs/:id",isAuth(passport), updateBlog)
-
 
 
 
@@ -510,16 +512,11 @@ app.post("/api/v1/blogs/:id/comments", cmmtvalid ,commentDisplay)
 
 /**
  * @openapi
- * '/api/v1/blogs/comments':
+ * '/api/v1/comments':
  *  get:
  *     tags:
  *     - Comments
  *     summary: Get all comments
- *     parameters:
- *      - name: id
- *        in: path
- *        description: The unique id of the blog
- *        required: true 
  *     responses:
  *       200:
  *         description: Success
@@ -540,7 +537,7 @@ app.post("/api/v1/blogs/:id/comments", cmmtvalid ,commentDisplay)
  *         description: Bad request
  */
 
-app.get("/api/v1/blogs/comments", findComments)
+app.get("/api/v1/comments", findComments)
 
 
 //------------- Likes ------------------------------//
@@ -567,7 +564,7 @@ app.get("/api/v1/blogs/comments", findComments)
  *         content:
  *          application/json:
  *            schema:
- *              type: array
+ *              type: object
  *              items:
  *                type: object
  *                properties:

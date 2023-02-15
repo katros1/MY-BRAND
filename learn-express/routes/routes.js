@@ -37,26 +37,6 @@ export async function findBlogs(req , res) {
  }
 
 
-/*
-
-
-
-
-
-
-
- */
-
-
-
-
-
-
-
-
-
-
-
 
  export async function  createBlog(req, res) {
     const blog = new Blog({
@@ -79,9 +59,15 @@ export async function findBlogs(req , res) {
 
     try {
         const blog =await Blog.findById(req.params.id);
-        res.send({Blogs: blog})
+        
+
+		if(blog == null){
+			res.status(404).send({error:"Blog not found!!"})
+		}else{
+			res.send({Blogs: blog})
+		}
     }catch{
-        res.status(404).send({error:"Blog not found!!"})
+        res.status(404).send({error:"error happened"})
     }
 
    
@@ -91,7 +77,7 @@ export async function updateBlog(req , res) {
         const blog =await Blog.findById(req.params.id);
         Object.assign(blog,req.body);
         blog.save();
-        res.json(`${blog.id} updated successfully`)  
+        res.status(201).json({message:`${blog.id} updated successfully`})  
         
     }catch{
         res.status(404).send({error:"Blog not found!!"})
@@ -101,7 +87,7 @@ export async function deleteBlog(req , res) {
     try {
         const blog =await Blog.findById(req.params.id);
         await blog.remove()
-        res.send({info:"deleted succefully"})  
+        res.status(200).send({message:"deleted succefully"})  
         
     }catch{
         res.status(404).send({error:"Blog not found!!"})
@@ -124,7 +110,7 @@ export async function deleteQuery(req , res) {
     try {
         const query =await contactQuery.findById(req.params.id);
         await query.remove()
-        res.send({info:"deleted succefully"})  
+        res.send({message:"deleted succefully"})  
         
     }catch{
         res.status(404).send({error:"Blog not found!!"})
@@ -149,7 +135,7 @@ export async function loginMssg(req,res) {
     res.header("userToken", token)
     const auth = new authInfo(req.body)
     try{
-     await res.send({info:"login successfully", token:token})
+     await res.send({message:"login successfully", token:token})
     }
     catch{
         res.status(400).send({error:"Authentication !"})
@@ -184,14 +170,14 @@ export async function commentDisplay(req, res){
 	if(!mongoose.Types.ObjectId.isValid(blog_id)){
 		return res.status(400).send({
 	  		message:'Invalid blog id',
-	  		data:{}
+	  		
 	  	});
 	}
 	Blog.findOne({_id:blog_id}).then(async (blog)=>{
 		if(!blog){
 			return res.status(400).send({
 				message:'No blog found',
-				data:{}
+				
 			});	
 		}else{
 
@@ -219,7 +205,7 @@ export async function commentDisplay(req, res){
 				await Blog.updateOne(
 					{_id:blog_id},
 					{
-						$push: { blogComments :commentData._id  } 
+						$push: { blogComments :commentData.comment } 
 					}
 				)
     
@@ -259,7 +245,7 @@ export async function findComments(req , res) {
 	if(!mongoose.Types.ObjectId.isValid(blog_id)){
 		return res.status(400).send({
 	  		message:'Invalid blog id',
-	  		data:{}
+	  		
 	  	});
 	}
 
@@ -267,7 +253,7 @@ export async function findComments(req , res) {
 		if(!blog){
 			return res.status(400).send({
 		  		message:'No blog found',
-		  		data:{}
+		  		
 		  	});
 		}else{
 			let current_user=req.userId;

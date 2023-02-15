@@ -4,7 +4,7 @@ const schema = mongoose.Schema({
 	content: String,
 	Image: String,
 	blogLikes:[{type: mongoose.Schema.Types.ObjectId, ref:"blogLikes"}],
-	blogComments:[{type: mongoose.Schema.Types.ObjectId, ref:"comments"}]
+	blogComments:[String]
 },
 {
 	timestamps:true,
