@@ -142,7 +142,7 @@ test(" Find blog with valid blog_ID", async () =>{
 
     test("Blogs comments", async () =>{
         const response = await request(app)
-        .post("/api/v1/blogs/63e4ac5c9afdae2d0140f0ae/comments")
+        .post("/api/v1/blogs/63e3749f6e88bcf14d716a9a/comments")
         .send({
             
             name: "helloo",
@@ -214,7 +214,7 @@ test(" Find blog with valid blog_ID", async () =>{
 
     test("make like on  ", async () =>{
         const response = await request(app)
-        .post("/api/v1/blogs/63e5c0942653b2bfe8a5a4e0/likes")
+        .post("/api/v1/blogs/63e3749f6e88bcf14d716a9a/likes")
         .set("Authorization", `Bearer ${token}`)
       .expect(200)
         

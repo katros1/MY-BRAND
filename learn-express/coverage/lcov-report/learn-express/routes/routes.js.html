@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.13% </span>
+                <span class="strong">58.94% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>55/93</span>
+                <span class='fraction'>56/95</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.25% </span>
+                <span class="strong">55.55% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/16</span>
+                <span class='fraction'>10/18</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">59.78% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>54/90</span>
+                <span class='fraction'>55/92</span>
             </div>
         
             
@@ -384,21 +384,7 @@
 <a name='L319'></a><a href='#L319'>319</a>
 <a name='L320'></a><a href='#L320'>320</a>
 <a name='L321'></a><a href='#L321'>321</a>
-<a name='L322'></a><a href='#L322'>322</a>
-<a name='L323'></a><a href='#L323'>323</a>
-<a name='L324'></a><a href='#L324'>324</a>
-<a name='L325'></a><a href='#L325'>325</a>
-<a name='L326'></a><a href='#L326'>326</a>
-<a name='L327'></a><a href='#L327'>327</a>
-<a name='L328'></a><a href='#L328'>328</a>
-<a name='L329'></a><a href='#L329'>329</a>
-<a name='L330'></a><a href='#L330'>330</a>
-<a name='L331'></a><a href='#L331'>331</a>
-<a name='L332'></a><a href='#L332'>332</a>
-<a name='L333'></a><a href='#L333'>333</a>
-<a name='L334'></a><a href='#L334'>334</a>
-<a name='L335'></a><a href='#L335'>335</a>
-<a name='L336'></a><a href='#L336'>336</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L322'></a><a href='#L322'>322</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -434,26 +420,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -479,7 +445,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -772,26 +744,6 @@ export async function findBlogs(req , res) {
  }
 &nbsp;
 &nbsp;
-/*
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
- */
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
 &nbsp;
  export async function  <span class="fstat-no" title="function not covered" >createBlog(</span>req, res) {
     const blog = <span class="cstat-no" title="statement not covered" >new Blog({</span>
@@ -814,9 +766,15 @@ export async function findBlogs(req , res) {
 &nbsp;
     try {
         const blog =await Blog.findById(req.params.id);
-        res.send({Blogs: blog})
+        
+&nbsp;
+		<span class="missing-if-branch" title="if path not taken" >I</span>if(blog == null){
+<span class="cstat-no" title="statement not covered" >			res.status(404).send({error:"Blog not found!!"})</span>
+		}else{
+			res.send({Blogs: blog})
+		}
     }catch{
-        res.status(404).send({error:"Blog not found!!"})
+        res.status(404).send({error:"error happened"})
     }
 &nbsp;
    
@@ -826,7 +784,7 @@ export async function <span class="fstat-no" title="function not covered" >updat
         const blog =<span class="cstat-no" title="statement not covered" >await Blog.findById(req.params.id);</span>
 <span class="cstat-no" title="statement not covered" >        Object.assign(blog,req.body);</span>
 <span class="cstat-no" title="statement not covered" >        blog.save();</span>
-<span class="cstat-no" title="statement not covered" >        res.json(`${blog.id} updated successfully`)  </span>
+<span class="cstat-no" title="statement not covered" >        res.status(201).json({message:`${blog.id} updated successfully`})  </span>
         
     }catch{
 <span class="cstat-no" title="statement not covered" >        res.status(404).send({error:"Blog not found!!"})</span>
@@ -836,7 +794,7 @@ export async function <span class="fstat-no" title="function not covered" >delet
 <span class="cstat-no" title="statement not covered" >    try {</span>
         const blog =<span class="cstat-no" title="statement not covered" >await Blog.findById(req.params.id);</span>
 <span class="cstat-no" title="statement not covered" >        await blog.remove()</span>
-<span class="cstat-no" title="statement not covered" >        res.send({info:"deleted succefully"})  </span>
+<span class="cstat-no" title="statement not covered" >        res.status(200).send({message:"deleted succefully"})  </span>
         
     }catch{
 <span class="cstat-no" title="statement not covered" >        res.status(404).send({error:"Blog not found!!"})</span>
@@ -859,7 +817,7 @@ export async function deleteQuery(req , res) {
     try {
         const query =await contactQuery.findById(req.params.id);
         await query.remove()
-<span class="cstat-no" title="statement not covered" >        res.send({info:"deleted succefully"})  </span>
+<span class="cstat-no" title="statement not covered" >        res.send({message:"deleted succefully"})  </span>
         
     }catch{
         res.status(404).send({error:"Blog not found!!"})
@@ -884,7 +842,7 @@ export async function loginMssg(req,res) {
     res.header("userToken", token)
     const auth = new authInfo(req.body)
     try{
-     await res.send({info:"login successfully", token:token})
+     await res.send({message:"login successfully", token:token})
     }
     catch{
 <span class="cstat-no" title="statement not covered" >        res.status(400).send({error:"Authentication !"})</span>
@@ -919,14 +877,14 @@ export async function commentDisplay(req, res){
 	if(!mongoose.Types.ObjectId.isValid(blog_id)){
 		return res.status(400).send({
 	  		message:'Invalid blog id',
-	  		data:{}
+	  		
 	  	});
 	}
 	Blog.findOne({_id:blog_id}).then(async (blog)=&gt;{
 		<span class="missing-if-branch" title="if path not taken" >I</span>if(!blog){
 <span class="cstat-no" title="statement not covered" >			return res.status(400).send({</span>
 				message:'No blog found',
-				data:{}
+				
 			});	
 		}else{
 &nbsp;
@@ -954,7 +912,7 @@ export async function commentDisplay(req, res){
 				await Blog.updateOne(
 					{_id:blog_id},
 					{
-						$push: { blogComments :commentData._id  } 
+						$push: { blogComments :commentData.comment } 
 					}
 				)
     
@@ -994,7 +952,7 @@ export async function <span class="fstat-no" title="function not covered" >findC
 	<span class="missing-if-branch" title="if path not taken" >I</span>if(!mongoose.Types.ObjectId.isValid(blog_id)){
 <span class="cstat-no" title="statement not covered" >		return res.status(400).send({</span>
 	  		message:'Invalid blog id',
-	  		data:{}
+	  		
 	  	});
 	}
 &nbsp;
@@ -1002,7 +960,7 @@ export async function <span class="fstat-no" title="function not covered" >findC
 		<span class="missing-if-branch" title="if path not taken" >I</span>if(!blog){
 <span class="cstat-no" title="statement not covered" >			return res.status(400).send({</span>
 		  		message:'No blog found',
-		  		data:{}
+		  		
 		  	});
 		}else{
 			let current_user=req.userId;
@@ -1075,7 +1033,7 @@ export async function <span class="fstat-no" title="function not covered" >findC
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-14T13:59:54.430Z
+                at 2023-02-15T06:05:15.512Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
