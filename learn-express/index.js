@@ -238,7 +238,7 @@ app.patch("/api/v1/blogs/:id",isAuth(passport), updateBlog)
  *  delete:
  *     tags:
  *     - Delete_Blog
- *     summary: Remove hero by id
+ *     summary: Remove blog by id
  *     security:
  *       - bearerAuth: [] 
  *     parameters:
