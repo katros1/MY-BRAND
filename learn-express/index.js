@@ -8,7 +8,7 @@ import Uservalid from "./middleware/checkSignUpValid.js";
 import cmmtvalid from "./middleware/checkCommentvalid.js";
 import { isAuth } from "./middleware/ath.js";
 import { jwtStrategy } from "./middleware/authorization.js";
-import cors from cors
+import cors from "cors"
 import { auth } from "./middleware/auth.js";
 //import { authrzt } from "./middleware/authorization.js";
 import passport from "passport";
@@ -30,7 +30,7 @@ mongoose.connect("mongodb+srv://Katros:babu02@cluster0.z4lsky9.mongodb.net/test"
 
     passport.use(jwtStrategy);
     app.use(passport.initialize());
-    app.use(cors)
+    app.use(cors())
 
 
 cloudinary.config({
