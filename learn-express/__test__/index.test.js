@@ -132,8 +132,8 @@ test(" Find blog with valid blog_ID", async () =>{
         .post("/api/v1/auth/login")
         .send({
             
-            UserName: "katrts",
-            Password: "katro1111"
+            UserName: "babu002",
+            Password: "zzzuuu"
         })
         .expect("Content-Type", /json/)
         .expect(200)
@@ -142,7 +142,7 @@ test(" Find blog with valid blog_ID", async () =>{
 
     test("Blogs comments", async () =>{
         const response = await request(app)
-        .post("/api/v1/blogs/63e3749f6e88bcf14d716a9a/comments")
+        .post("/api/v1/blogs/63e5c57d79a16277858f904e/comments")
         .send({
             
             name: "helloo",
@@ -214,8 +214,16 @@ test(" Find blog with valid blog_ID", async () =>{
 
     test("make like on  ", async () =>{
         const response = await request(app)
-        .post("/api/v1/blogs/63e3749f6e88bcf14d716a9a/likes")
+        .post("/api/v1/blogs/63e5c57d79a16277858f904e/likes")
         .set("Authorization", `Bearer ${token}`)
+      .expect(200)
+        
+        
+    })
+
+    test("find  comments  ", async () =>{
+        const response = await request(app)
+        .get("/api/v1/comments")
       .expect(200)
         
         
