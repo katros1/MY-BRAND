@@ -113,7 +113,7 @@ export async function deleteQuery(req , res) {
         res.send({message:"deleted succefully"})  
         
     }catch{
-        res.status(404).send({error:"Blog not found!!"})
+        res.status(404).send({error:"message not found!!"})
     }
 }
 
@@ -155,12 +155,13 @@ export async function signUpMssg(req,res) {
         UserName: req.body.UserName,
         Password: mixPassword
     })
-    await auth.save();
+    // await auth.save();
     try{
+		await auth.save();
       res.status(201).send({message:"Account created successfully"})
     }
     catch{
-        res.status(400).send({error:"Authentication error!!"})
+        res.status(400).json(error)
     }
 
 }
@@ -239,6 +240,19 @@ export async function findComments(req , res) {
     const cmmt = await comment.find();
     res.send({Comment: cmmt});
  }
+
+
+ export async function deleteComment(req , res) {
+    try {
+        const query =await comment.findById(req.params.id);
+        await comment.deleteOne()
+        res.send({message:"deleted succefully"})  
+        
+    }catch{
+        res.status(404).send({error:"comment not found!!"})
+    }
+}
+
 
  export async function likesDisplay(req , res) {
     let blog_id=req.params.id;
