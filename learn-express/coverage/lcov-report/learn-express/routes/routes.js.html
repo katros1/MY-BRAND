@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.94% </span>
+                <span class="strong">58% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>56/95</span>
+                <span class='fraction'>58/100</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.15% </span>
+                <span class="strong">65% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>12/19</span>
+                <span class='fraction'>13/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.78% </span>
+                <span class="strong">58.76% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>55/92</span>
+                <span class='fraction'>57/97</span>
             </div>
         
             
@@ -384,7 +384,21 @@
 <a name='L319'></a><a href='#L319'>319</a>
 <a name='L320'></a><a href='#L320'>320</a>
 <a name='L321'></a><a href='#L321'>321</a>
-<a name='L322'></a><a href='#L322'>322</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a>
+<a name='L335'></a><a href='#L335'>335</a>
+<a name='L336'></a><a href='#L336'>336</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -541,6 +555,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -622,8 +637,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -820,7 +848,7 @@ export async function deleteQuery(req , res) {
 <span class="cstat-no" title="statement not covered" >        res.send({message:"deleted succefully"})  </span>
         
     }catch{
-        res.status(404).send({error:"Blog not found!!"})
+        res.status(404).send({error:"message not found!!"})
     }
 }
 &nbsp;
@@ -862,12 +890,13 @@ export async function signUpMssg(req,res) {
         UserName: req.body.UserName,
         Password: mixPassword
     })
-<span class="cstat-no" title="statement not covered" >    await auth.save();</span>
+    // await auth.save();
 <span class="cstat-no" title="statement not covered" >    try{</span>
+<span class="cstat-no" title="statement not covered" >		await auth.save();</span>
 <span class="cstat-no" title="statement not covered" >      res.status(201).send({message:"Account created successfully"})</span>
     }
     catch{
-<span class="cstat-no" title="statement not covered" >        res.status(400).send({error:"Authentication error!!"})</span>
+<span class="cstat-no" title="statement not covered" >        res.status(400).json(error)</span>
     }
 &nbsp;
 }
@@ -942,10 +971,23 @@ export async function commentDisplay(req, res){
     await cmmt.save();
     res.send({Comment:cmmt});*/
 }
-export async function <span class="fstat-no" title="function not covered" >findComments(</span>req , res) {
-    const cmmt = <span class="cstat-no" title="statement not covered" >await comment.find();</span>
-<span class="cstat-no" title="statement not covered" >    res.send({Comment: cmmt});</span>
+export async function findComments(req , res) {
+    const cmmt = await comment.find();
+    res.send({Comment: cmmt});
  }
+&nbsp;
+&nbsp;
+ export async function <span class="fstat-no" title="function not covered" >deleteComment(</span>req , res) {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+        const query =<span class="cstat-no" title="statement not covered" >await comment.findById(req.params.id);</span>
+<span class="cstat-no" title="statement not covered" >        await comment.deleteOne()</span>
+<span class="cstat-no" title="statement not covered" >        res.send({message:"deleted succefully"})  </span>
+        
+    }catch{
+<span class="cstat-no" title="statement not covered" >        res.status(404).send({error:"comment not found!!"})</span>
+    }
+}
+&nbsp;
 &nbsp;
  export async function likesDisplay(req , res) {
     let blog_id=req.params.id;
@@ -1033,7 +1075,7 @@ export async function <span class="fstat-no" title="function not covered" >findC
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-16T09:58:56.847Z
+                at 2023-02-17T13:58:54.735Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
