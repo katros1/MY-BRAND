@@ -1,6 +1,6 @@
 import express, { json } from "express";
 import mongoose from "mongoose";
-import {findBlogs ,createBlog, findBlog, updateBlog, deleteBlog, sendQuery, readQuery, deleteQuery, loginMssg, signUpMssg, commentDisplay, findComments, likesDisplay} from "./routes/routes.js";
+import {findBlogs ,createBlog, findBlog, updateBlog, deleteBlog, sendQuery, readQuery, deleteQuery, loginMssg, signUpMssg, commentDisplay, findComments, likesDisplay, deleteComment} from "./routes/routes.js";
 import blogValid from "./middleware/checkBlogValid.js";
 import qryvalid from "./middleware/checkQueryValid.js";
 import loginValid from "./middleware/checkLoginValid.js";
@@ -540,6 +540,35 @@ app.post("/api/v1/blogs/:id/comments", cmmtvalid ,commentDisplay)
  */
 
 app.get("/api/v1/comments", findComments)
+
+
+//---------- Delete messages ------------------------------//
+
+
+/**
+ * @openapi
+ * '/api/v1/comments/{id}':
+ *  delete:
+ *     tags:
+ *     - Delete a comment
+ *     summary: Remove comment by id
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        description: The unique id of the comment
+ *        required: true
+ *     responses:
+ *      200:
+ *        description: Removed
+ *      400:
+ *        description: Bad request
+ *      404:
+ *        description: Not Found
+ */
+
+
+
+app.delete("/api/v1/comments/:id", deleteComment)
 
 
 //------------- Likes ------------------------------//
