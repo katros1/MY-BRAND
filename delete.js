@@ -1,12 +1,33 @@
-function deleteItem (id){
+async function deleteItem(id){
     //console.log(id, "to be deleted");
-   let post = JSON.parse(localStorage.getItem("blogs"));
-    let index = post.findIndex(x => x.id ==id)
-    post.splice(index,1);
-    localStorage.setItem('blogs', JSON.stringify(post));
-    window.location.reload();
-}
+//    let post = JSON.parse(localStorage.getItem("blogs"));
+//     let index = post.findIndex(x => x.id ==id)
+//     post.splice(index,1);
+//     localStorage.setItem('blogs', JSON.stringify(post));
 
+    const deleted = await fetch(`https://my-brand-o2aa.onrender.com/api/v1/blogs/${id}`, {
+        method:'DELETE',
+        headers:{
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieW91ciBuYW1lIiwiVXNlck5hbWUiOiJjaG9vc2UgcGFzc3dvcmQiLCJ1c2VySWQiOiI2M2ViZDNhNmU0N2MzODE0YjQ2NDU4MzQiLCJpYXQiOjE2NzY1NjQ2ODV9.oJiGp7X6JyUAKyDZ0pAcE7hbU7ne3SOTq_AI0QsE8vc'
+        }
+    })
+      
+    if(deleted.status == 200){
+        window.location.reload(); 
+    }else {
+        console.error();
+    }
+   
+
+
+
+    // .then(res => res.json()) 
+    // .then(res => console.log('id'))
+    // .catch(err => console.log(err))
+   
+
+
+}
 
 
 /*function GFG_click() {

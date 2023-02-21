@@ -24,58 +24,154 @@ const action = (navCondition) => {
   }
 }
 
+
+fetch('https://my-brand-o2aa.onrender.com/api/v1/blogs')
+.then(res => {
+    return res.json();
+})
+.then(data => {
+      let datas = data.Blogs
+    console.log(datas)
+    const recentBlogs = document.querySelector('.blog-articles')
+
+    if(datas.length > 12 ){
+      for(let blog = (datas.length - 1); blog > datas.length/2; blog--){
+    
+
+        let post = `<article class="post-articles" style="border-top: 2px solid#81D8F7">
+    <div class="post-content">
+        <time class="post-date" style="color:#81D8F7;"> ${datas[blog].title}</time>
+        <div class="blog-post-title">
+            <h5>
+                <a data-id="2354" href="singleBlogView.html?id=${datas[blog]._id}">
+                    ${datas[blog].title}		
+                </a>
+            </h5>
+        </div>
+        <div class="blog-post-content">
+          <img src = "${datas[blog].Image}">     
+        </div>
+    </div>
+    </article>`
+       
+    recentBlogs.innerHTML += post; 
+    
+    
+    }
+    } else{
+    for(let blog = (datas.length - 1); blog >= 0 ; blog--){
+    
+
+    let post = `<article class="post-articles" style="border-top: 2px solid#81D8F7">
+<div class="post-content">
+    <time class="post-date" style="color:#81D8F7;"> ${datas[blog].title}</time>
+    <div class="blog-post-title">
+        <h5>
+            <a data-id="2354" href="singleBlogView.html?id=${datas[blog]._id}">
+                ${datas[blog].title}		
+            </a>
+        </h5>
+    </div>
+    <div class="blog-post-content">
+      <img src = "${datas[blog].Image}">     
+    </div>
+</div>
+</article>`
+   
+recentBlogs.innerHTML += post; 
+
+
+}}})
+    
+
+
+
+
+
+
+
 //contact validation
 
-contactForm.addEventListener('submit', (evt) => {
+contactForm.addEventListener('submit', async (evt) => {
   evt.preventDefault()
-  validateInput()
-})
-
-const validateInput = () => {
-  let email = emailInput.value
-  let textarea = textareaInput.value
-  if (!email && !textarea) {
-    setError(emailInput.parentElement)
-    setError(textareaInput.parentElement)
-    showMessage('Please fill in the Email and Message')
-    return false;
-  } else if (!email && textarea) {
-    setError(emailInput.parentElement)
-    showMessage("Please fill the Email box")
-    return false;
-  } else if (!textarea && email) {
-    setError(textareaInput.parentElement)
-    showMessage('Please Enter a message')
-    return false;
-  } else if(textarea.length<15){
-    setError(textareaInput.parentElement)
-    showMessage('Please Enter a  clear message')
-    return false;
+  validateInputs()
+  try {
+    const result = await fetch('https://my-brand-o2aa.onrender.com/api/v1/messages', {
+      method: "POST",
+      headers: {
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify({
+                        name: nameInput.value,
+                        email: emailInput.value,
+                        message: textareaInput.value
+      })
+       
+      
+    })
+    const data = await result.json();
     
-  }
-  else if (email && textarea) {
-   
-    setSuccess(emailInput.parentElement)
-    setSuccess(textareaInput.parentElement)
-    showMessage('Message sent to Author', '#08fdd8')
-    
-    if(localStorage.getItem('Query')== null){
-     
-      localStorage.setItem('Query' ,'[]') 
+    console.log(data);
+    // window.location = 'loginPage.html';
+    // alert("The account created successfully")
 
-    }
-    var query = JSON.parse(localStorage.getItem('Query'));
-    query.push({'name':nameInput.value ,'tel':telInput.value , 'email':emailInput.value , 'Message':textareaInput.value , 'id':query.length + 1});
-    localStorage.setItem('Query' , JSON.stringify(query));
     textareaInput.value = ''
     emailInput.value = ''
     nameInput.value = ''
     telInput.value = ''
   }
   
+  catch (error) {
+  console.log(error);
+  }
+
+})
+
+
+
+
+const validateInputs = () => {
+  let email = emailInput.value
+  let textarea = textareaInput.value
+  if (!email && !textarea) {
+    setErr(emailInput.parentElement)
+    setErr(textareaInput.parentElement)
+    showMessages('Please fill in the Email and Message')
+    return false;
+  } else if (!email && textarea) {
+    setErr(emailInput.parentElement)
+    showMessages("Please fill the Email box")
+    return false;
+  } else if (!textarea && email) {
+    setErr(textareaInput.parentElement)
+    showMessages('Please Enter a message')
+    return false;
+  } else if(textarea.length<3){
+    setErr(textareaInput.parentElement)
+    showMessages('Please Enter a  clear message')
+    return false;
+    
+  }
+  else if (email && textarea) {
+   
+    setSucces(emailInput.parentElement)
+    setSucces(textareaInput.parentElement)
+    showMessages('Message sent to Author', '#08fdd8')
+    
+    // if(localStorage.getItem('Query')== null){
+     
+    //   localStorage.setItem('Query' ,'[]') 
+
+    // }
+    // var query = JSON.parse(localStorage.getItem('Query'));
+    // query.push({'name':nameInput.value ,'tel':telInput.value , 'email':emailInput.value , 'Message':textareaInput.value , 'id':query.length + 1});
+    // localStorage.setItem('Query' , JSON.stringify(query));
+    
+  }
+  
 }
 
-const setError = (input) => {
+const setErr = (input) => {
   if (input.classList.contains('success')) {
     input.classList.remove('success')
   } else {
@@ -86,7 +182,7 @@ const setError = (input) => {
 
 //success pop-up
 
-const setSuccess = (input) => {
+const setSucces = (input) => {
   if (input.classList.contains('error')) {
     input.classList.remove('error')
   } else {
@@ -94,15 +190,15 @@ const setSuccess = (input) => {
   }
 }
 
-const messageDiv = document.querySelector('.message')
-const showMessage = (message, updateColor) => {
+const messagDiv = document.querySelector('.message')
+const showMessages = (message, updateColor) => {
   const divContent = document.createElement('div')
   divContent.textContent = message
   divContent.classList.add('message-content')
   divContent.style.backgroundColor = updateColor
-  messageDiv.prepend(divContent)
+  messagDiv.prepend(divContent)
 
-  messageDiv.style.transform = `translate(${(0, 0)}%)`
+  messagDiv.style.transform = `translate(${(0, 0)}%)`
   setTimeout(() => {
     divContent.classList.add('hide')
     divContent.addEventListener('transitionend', () => {

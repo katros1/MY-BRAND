@@ -1,5 +1,19 @@
-function deleteItem (id){
+async function deleteItem (id){
     //console.log(id, "to be deleted");
+
+    const deleted = await fetch(`https://my-brand-o2aa.onrender.com/api/v1/comments/${id}`, {
+        method:'DELETE'
+    })
+      
+    if(deleted.status == 200){
+        window.location.reload(); 
+    }else {
+        console.error();
+    }
+
+
+
+
     let post = JSON.parse(localStorage.getItem("blogs"));
     let index = post.findIndex(x => x.id ==id)
     post.splice(index,1);

@@ -517,6 +517,7 @@ box-shadow: 0 0  5px 5px #191919;
     position: absolute;
     right: 50px;
     top: 16px;
+    justify-content: space-between;
     align-items: center;
     display: flex;
 }
@@ -546,9 +547,8 @@ box-shadow: 0 0  5px 5px #191919;
 }
 #Logout1{
    position: absolute;
-   right:0px;
    top: 25px; 
-   right: 20px;
+   right: 10px;
    font-family: 'Inter';
    font-style: normal;
    font-weight: 1200;
@@ -564,8 +564,8 @@ box-shadow: 0 0  5px 5px #191919;
 }
 .copyRight{
     position: absolute;
-    left: 60px;
-    top:1300px;
+    
+    
     
     font-family: 'Inter';
     font-style: normal;
@@ -582,20 +582,25 @@ box-shadow: 0 0  5px 5px #191919;
 }
 .dashtitle{
     color: #08fdd8;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 900;
     position: absolute;
-    left:150px;
+    left:130px;
     top:170px;
-    width:250px;
+    width:220px;
+    padding: 10px 15px 10px;
+    background-color: #506b6ba0;
+    border-radius: 50px;
+ 
 
 }
 .dashform{
     background-color: #506b6b;
-    width: 450px;
+    width: 100%;
     min-height: 400px;
-    position: absolute;
-    left:15px;
+    position: relative;
+    margin: 25px 25px 25px;
+    /* left:15px; */
     top:250px;
     border-radius: 10px;
 
@@ -631,7 +636,7 @@ box-shadow: 0 0  5px 5px #191919;
  }
  .Queryform p{
     position: absolute;
-    top: 35px;
+    top: 65px;
     left: 10px;
     width: 450px;
     font-size: 15px;
@@ -720,7 +725,7 @@ box-shadow: 0 0  5px 5px #191919;
  .qname{
     position: absolute;
     top: 5px;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 900;
  }
  .tel{
@@ -734,6 +739,15 @@ box-shadow: 0 0  5px 5px #191919;
     left: 170px;
     top: 10px;
  }
+
+ .email{
+   position: absolute;
+   left: 170px;
+   top: 10px;
+   font-size: 11px;
+   font-weight:700;
+   width: 100px;
+}
  .qButton2{
     display: inline;
     position: absolute;
@@ -767,7 +781,7 @@ box-shadow: 0 0  5px 5px #191919;
     top: 30px;
     left: 20px;
     width: 990px;
-    font-size: 13px;
+    font-size: 15px;
 
  }
  .Mblogform1{
@@ -821,15 +835,16 @@ box-shadow: 0 0  5px 5px #191919;
 }
 .bLikes{
     position: absolute;
-    left: 320px;
-    top: 30px
+    left: 24px;
+    top: 60px
 }
 .bButton{
     display: inline;
     position: absolute;
-    left: 200px;
-    top: 55px;
+    left: 250px;
+    top: 30px;
     width: 250px;
+    font-size: 15px;
     
  }
  .bDate1{
@@ -930,12 +945,14 @@ box-shadow: 0 0  5px 5px #191919;
     border-radius: 5px;
  }
  .Newblog{
-    background-color: #194941a5;
-    width: 130px;
+    background-color: #19d2b3;
+    width: 100px;
     height: 50px;
     position: absolute;
-   margin-top: 170px;
-    left: 350px;
+    margin-top: 250px;
+    margin-left: 30px;
+    left: 300px;
+    top:5px;
     font-weight: bold;
     font-size: 15px;
     color: rgb(202, 234, 247);
@@ -1083,6 +1100,8 @@ box-shadow: 0 0  5px 5px #191919;
    border: 1px solid rgb(240, 240, 150);
    padding: 30px 30px 30px;
    margin-top: 100px;
+   width: 100%;
+   margin: 5px;
    
    
    
@@ -1365,6 +1384,16 @@ box-shadow: 0 0  5px 5px #191919;
 .succes .sentMessage .hide{
   opacity: 0;
 }
+
+.Likes i{
+   font-size: 40px;
+   border-color:#08fdd8
+}
+
+.Like i{
+   font-size: 50px;
+   color:#08fdd8
+}
  
 .name{
    width: 100px;
@@ -1452,18 +1481,18 @@ box-shadow: 0 0  5px 5px #191919;
 }
 .Udashform{
    background-color: #506b6b;
-   width: 450px;
+   width: 100%;
    min-height: 400px;
-   position: absolute;
-   left:15px;
+   margin: 25px 25px 25px;
+   position: relative;
+   /* left:15px; */
    top:250px;
    border-radius: 10px;
 
 }
 .copyRight2{
    position: absolute;
- right: 500px;
-   top:630px;
+ 
    
    font-family: 'Inter';
    font-style: normal;
@@ -1492,10 +1521,98 @@ box-shadow: 0 0  5px 5px #191919;
 .dashtitleB h3{
    margin-left: 35px;
 }
-  
+
+.Cdashform{
+   background-color: #506b6b;
+   width: 100%;
+   min-height: 300px;
+   position: relative;
+   margin:25px 25px 25px;
+    /* left:230px; */
+   top:250px; 
+   border-radius: 15px;
+
+}
+#dashf{
+   background-color: #506b6b;
+   width: 100%;
+   min-height: 300px;
+   position: relative;
+   margin:50px 25px 50px;
+    /* left:230px; */
+   top:300px; 
+   border-radius: 15px;
 
 
+}
 
+
+.inputBoxs1{
+   width: 400px;
+   height: 20px;
+   color: #8a8484;
+   background: #0e2b33;
+   border-radius: 20px;
+   border: #1CE0D4;
+   margin-bottom: 20px;
+   font-size: 18px;
+   font-family: sans-serif;
+   }
+   .inputBoxs2{
+      width: 400px;
+      height: 20px;
+      color: #8a8484;
+      background: #0e2b33;
+      border-radius: 20px;
+      border: #1CE0D4;
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-family: sans-serif;
+      }
+      .inputBoxs3{
+         width: 400px;
+         height: 20px;
+         color: #8a8484;
+         background: #0e2b33;
+         border-radius: 20px;
+         border: #1CE0D4;
+         margin-bottom: 20px;
+         font-size: 18px;
+         font-family: sans-serif;
+         }
+         .inputBoxs4{
+            width: 400px;
+            height: 20px;
+            color: #8a8484;
+            background: #0e2b33;
+            border-radius: 20px;
+            border: #1CE0D4;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-family: sans-serif;
+            }
+            .continue2{
+               position: absolute;
+               width: 170px;
+               height: 55px;
+               
+               color: #FFFFFF;
+               background: #2C9C95;
+               font-family: 'Inter';
+               font-style: normal;
+               font-weight: 700;
+               font-size: 16px;
+               line-height: 19px;
+               border: 0ch;
+               top:400px;
+               left:150px;
+               
+               }
+
+ @media screen and (min-width: 990px){
+
+   
+ }
 
 @media screen and (min-width: 990px){
     .dashtitle{
@@ -1554,8 +1671,27 @@ box-shadow: 0 0  5px 5px #191919;
         left:230px;
         top:200px;
         border-radius: 15px;
+        padding-bottom: 20px;
     
+
     }
+
+    #dashf{
+
+      background-color: #506b6b;
+        width: 1000px;
+        min-height: 300px;
+        position: absolute;
+        left:230px;
+        top:200px;
+        border-radius: 15px;
+        padding-bottom: 20px;
+    
+
+    }
+
+    
+
     .Cdashform{
       background-color: #506b6b;
       width: 1000px;
@@ -1667,10 +1803,11 @@ box-shadow: 0 0  5px 5px #191919;
             padding-bottom: 30px;
     }
     .copyRight{
-      position: absolute;
-      left: 400px;
-      top:700px;
-      
+      position: relative;
+      left: 550px;
+      /* left: 570px;
+      top:700px; */
+   
       font-family: 'Inter';
       font-style: normal;
       font-weight: 1200;
@@ -1694,10 +1831,16 @@ box-shadow: 0 0  5px 5px #191919;
             width: 300px;
             color: #ffffff;
     }
+    .allIn{
+      display: flex;
+      flex-direction: column;
+    }
     .copyRight2{
-      position: absolute;
-    right: 500px;
-      top:630px;
+      position: relative;
+      margin-top:25px;
+      margin-bottom: 0;
+      right:490px;
+      
       
       font-family: 'Inter';
       font-style: normal;
@@ -1707,6 +1850,7 @@ box-shadow: 0 0  5px 5px #191919;
       /* identical to box height */
       
       display: flex;
+      flex-direction: row;
       align-items: center;
       width: 300px;
       color: #ffffff;
@@ -2148,20 +2292,44 @@ box-shadow: 0 0  5px 5px #191919;
  .qname{
     position: absolute;
     top: 10px;
-    font-size: 15px;
-    font-weight: 900;
+    font-size: 17px;
+    font-weight: 700;
+    width: 300px;
+    color:#a8f8ec
  }
  .tel{
     position: absolute;
-    left: 200px;
+    left: 300px;
     top: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color:#a8f8ec
+
 
  }
  .Email{
     position: absolute;
-    left: 400px;
+    left: 600px;
     top: 10px;
+    font-size: 16px;
+    font-weight:700;
+    color:#a8f8ec
  }
+
+ .email{
+   position: absolute;
+   left: 400px;
+   top: 10px;
+   font-size: 16px;
+   font-weight:700;
+   color:#a8f8ec;
+   width: 200px;
+}
+
+ /* .commet{
+   position: relative;
+  padding-bottom:10px;
+ } */
  .qButton2{
     display: inline;
     position: absolute;
@@ -2189,6 +2357,8 @@ box-shadow: 0 0  5px 5px #191919;
  .Mblogform{
     height: 70px;
     position: relative;
+    font-size: 20px;
+    color: #a8f8ec;
  }
  .Mblogform p{
     position: absolute;
@@ -2249,8 +2419,9 @@ box-shadow: 0 0  5px 5px #191919;
 }
 .bLikes{
     position: absolute;
-    left: 620px;
-    top: 30px
+    left: 520px;
+    top: 30px;
+    font-size: 20px;
 }
 .bButton{
     display: inline;
@@ -2359,8 +2530,9 @@ box-shadow: 0 0  5px 5px #191919;
     width: 130px;
     height: 50px;
     position: absolute;
-    bottom: 470px;
-    left: 1100px;
+    margin-top: 150px;
+    bottom: 500px;
+    left: 1090px;
  }
  .QueryButton3{
     position: absolute;
@@ -2376,15 +2548,16 @@ box-shadow: 0 0  5px 5px #191919;
     height: 30px;
  }
  .CQueryform{
-    height: 70px;
+    height: 90px;
     position: relative;
+    padding-bottom: 10px;
     
 
 
  }
  .CQueryform p{
 
-   padding-top: 30px;
+   padding-top: 60px;
    padding-left: 10px;
     width: 900px;
     font-size: 15px;
@@ -2431,6 +2604,7 @@ box-shadow: 0 0  5px 5px #191919;
  .Userfrm{
     height: 70px;
     font-size: 18px;
+    color: #a8f8ec;
  }
  .Usrform1{
     position: relative;
@@ -2442,19 +2616,22 @@ box-shadow: 0 0  5px 5px #191919;
  }
  .Usrform2{
     position: absolute;
-    left: 160px;
+    left: 30px;
+    top:20px;
 
  }
  .Usrform3{
     position: absolute;
     left: 300px;
     font-size: 15px;
+    top:20px;
     
 
  }
  .Usrform4{
     position: absolute;
-    left: 600px;
+    left: 500px;
+    top:20px;
     
  }
  .buButton1{
@@ -2643,10 +2820,12 @@ box-shadow: 0 0  5px 5px #191919;
    
    
    
+   
  }
 
  .blog-article  img{
-   width: 90%;
+   width: 70%;
+   max-height: 350px;
    margin-top: 30px;
    margin-left: 50px;
    margin-right: 50px;

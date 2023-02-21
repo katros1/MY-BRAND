@@ -8,9 +8,7 @@
         <script src="https://kit.fontawesome.com/ea32ac11c6.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" href="img\logo.png" type="image/x-icon">
-        <link href="node_modules/froala-editor/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="node_modules/froala-editor/js/froala_editor.pkgd.min.js"></script>
-        <link href="node_modules/froala-editor/css/themes/gray.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
     </head> 
     <body>
         <header>
@@ -52,7 +50,7 @@
                 <div class="form-input-wrapper">
                   <div class="blogForm"> 
                     <div class="form-input-group">
-                      <input type="file" placeholder="" name="name" class="photo" id="photo" />
+                      <input type="text" placeholder="add Image cloudinary link" name="name" class="photo" id="photo" />
                       <span></span>
                     </div>
                     <small>Error message</small>
@@ -78,7 +76,7 @@
                 
                   <div class="form-input-group">
                     <div class="blogForm">
-                    <textarea id="froala-editor">
+                    <textarea id="edit">
                       
                       
 
@@ -102,10 +100,15 @@
                     
                     
             </form>
-           
-        <script src="createblogValidation.js"></script>
-        <script>new FroalaEditor('textarea#froala-editor'); </script>
-        
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>   
+        <script src="EditNewValidation.js"></script>
+
+        <!-- <script>let editor = new FroalaEditor('textarea#froala-editor');</script> -->
+        <script>
+          let editor = new FroalaEditor('#edit',{
+              heightMax:200,
+          });
+        </script>
         
     </body>
     </html>

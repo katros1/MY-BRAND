@@ -4,12 +4,39 @@ const frmInput = document.getElementById('contactBlog2');
 const nameInput = document.getElementById('inputrectBlog1');
 
 
-frmInput.addEventListener('submit' , (e) => {
+frmInput.addEventListener('submit' , async (e) => {
     e.preventDefault();
+
+    let params = (new URL(document.location)).searchParams;
+    let name = params.get('id')
+
+    try {
+      const result = await fetch(`https://my-brand-o2aa.onrender.com/api/v1/blogs/${name}/comments`, {
+        method: "POST",
+        headers: {
+          "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({
+          name: nameInput.value,
+          email: emailInput.value,
+          comment: textInput.value
+        })
+         
+        
+      })
+      const data = await result.json();
+      
+      console.log(data);
+      alert("'comment sent to Author. Thank you!'")
+    }
+    
+    catch (error) {
+    console.log(error);
+    }
     validateInputcmmt();
   });
   
-   function validateInputcmmt() {
+   function  validateInputcmmt() {
     let email = emailInput.value.trim();
     let text = textInput.value.trim();
     if(!email && !text){
@@ -23,7 +50,7 @@ frmInput.addEventListener('submit' , (e) => {
             
              
     } else{
-      setSuccess(textInput.parentElement , 'comment sent to Author. Thank you!')
+      // setSuccess(textInput.parentElement , 'comment sent to Author. Thank you!')
       storeComment(); 
       emailInput.value = ''
       textInput.value = ''
@@ -32,7 +59,7 @@ frmInput.addEventListener('submit' , (e) => {
     
 }
 
-function storeComment(){
+async function storeComment(){
   if(localStorage.getItem('comment') == null){
 
     localStorage.setItem('comment' , '[]')
@@ -43,7 +70,52 @@ function storeComment(){
   comments.push({'name': nameInput.value, 'email': emailInput.value, 'comment': textInput.value, 'id': comments.length+1});
   localStorage.setItem('comment' , JSON.stringify(comments));
 
-}
+//   let usrInfo = {
+//     name: nameInput.value,
+//     email: emailInput.value,
+//     comment: textInput.value
+//   }
+
+//   console.log(usrInfo)
+
+//   const option ={
+//     method: "POST",
+//     header: {
+//       "Content-Type": "application/json"
+//     },
+//     body: JSON.stringify(usrInfo)
+//   }
+//   let params = (new URL(document.location)).searchParams;
+//   let name = params.get('id')
+
+// console.log(name)
+// const pushComment = await fetch('https://my-brand-o2aa.onrender.com/api/v1/blogs/'+name+'/comments', option)
+   
+// const data = await pushComment.json();
+
+// if(pushComment.status == 200) {
+
+
+// }
+// else { 
+
+// }
+
+// .then(data => {
+//   if (!data.ok) {
+//     throw Error(data.status);
+//    }
+//    return data.json();
+//   }).then(usrInfo => {
+//   console.log(usrInfo);
+
+// })
+// .then(usrInfo => console.log(usrInfo))
+// }catch(error){alert(Error)}
+
+
+
+ }
 
   
   function setErrorLn(input, message){

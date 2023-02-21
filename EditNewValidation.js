@@ -32,26 +32,78 @@ const textfrla = document.getElementById('froala-editor')
 const uploadButton = document.querySelector('.contact-button2')
 const imgInput = document.getElementById('photo')
 
-imgInput.addEventListener('change', (event) => {
-    const img = event.target.files[0];
+// imgInput.addEventListener('change', (event) => {
+//     const img = event.target.files[0];
     
-    const reader = new FileReader();
+//     const reader = new FileReader();
 
-    reader.readAsDataURL(img);
+//     reader.readAsDataURL(img);
 
-    reader.addEventListener('load', () => {
-        localStorage.setItem('photo', reader.result);
-    });
+//     reader.addEventListener('load', () => {
+//         localStorage.setItem('photo', reader.result);
+//     });
 
    
-});
+// });
+  
 
-let myBlog=JSON.parse(localStorage.getItem('blogs'));
+
+let params = (new URL(document.location)).searchParams;
+    let name = params.get('id')
+
+fetch('https://my-brand-o2aa.onrender.com/api/v1/blogs')
+.then(res => {
+    return res.json();
+})
+.then(data => {
+      let datas = data.Blogs
+    console.log(datas)
+
+    datas.forEach(blog => {
+    if(name == blog._id){
+      titleInput.value = blog.title
+      editor.html.set(blog.content)
+      imgInput.value = blog.Image
+    }
+
+    })
+        
+  })
 
 
-formInput.addEventListener('submit' , (e) => {
+
+//let myBlog=JSON.parse(localStorage.getItem('blogs'));
+
+
+formInput.addEventListener('submit' ,async (e) => {
     e.preventDefault();
-    validate();
+    try {
+      const result = await fetch(`https://my-brand-o2aa.onrender.com/api/v1/blogs/${name}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type" : "application/json",
+          Authorization :'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieW91ciBuYW1lIiwiVXNlck5hbWUiOiJjaG9vc2UgcGFzc3dvcmQiLCJ1c2VySWQiOiI2M2ViZDNhNmU0N2MzODE0YjQ2NDU4MzQiLCJpYXQiOjE2NzY1NjQ2ODV9.oJiGp7X6JyUAKyDZ0pAcE7hbU7ne3SOTq_AI0QsE8vc'
+        },
+        body: JSON.stringify({
+          title: titleInput.value,
+          content: textfrla.value,
+          Image: imgInput.value
+        }),
+        })
+         
+        
+      
+      const data = await result.json();
+      
+      console.log(data);
+      validate();
+    }
+    
+    catch (error) {
+    console.log(error);
+    }
+
+    // validate();
 
     
   });
@@ -68,7 +120,7 @@ formInput.addEventListener('submit' , (e) => {
       ErrorM(titleInput , 'short title')
     }else if(!text){
       ErrorM(textfrla, 'Please enter the blog body')
-    }else if(text.length < 100){
+    }else if(text.length < 5){
       ErrorM(textfrla , 'short content')
     } 
     else {
@@ -81,13 +133,13 @@ formInput.addEventListener('submit' , (e) => {
           localStorage.setItem('blogs' , '[]');
   
         }
-        var retriveImage = localStorage.getItem('photo');
-        var myBlogs = JSON.parse(localStorage.getItem('blogs'));
-        myBlogs.push({'title':titleInput.value, 'body':textfrla.value, 'image': retriveImage  });
-        localStorage.setItem('blogs' ,JSON.stringify(myBlogs));
+        // var retriveImage = localStorage.getItem('photo');
+        // var myBlogs = JSON.parse(localStorage.getItem('blogs'));
+        // myBlogs.push({'title':titleInput.value, 'body':textfrla.value, 'image': retriveImage  });
+        // localStorage.setItem('blogs' ,JSON.stringify(myBlogs));
   
        titleInput.value = ''
-       textfrla.value = ""
+       editor.html.set('')
        imgInput.value = ''
   
   })

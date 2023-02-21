@@ -1,17 +1,49 @@
-const nameInput = document.querySelector('.inputBoxs1');
-const usernameInput = document.querySelector('.inputBoxs2');
-const passwordInput = document.querySelector('.inputBoxs3');
-const confirmInput = document.querySelector('.inputBoxs4');
-const frmInput = document.querySelector('.formSignup');  
-  
+// const nameInput = document.getElementById('name').value;
+// const usernameInput = document.getElementById('uname').value;
+// const passwordInput = document.getElementById('pass').value;
+
+const frmInput = document.getElementById('formSignup');  
 
 
-frmInput.addEventListener('submit' , (e) => {
+frmInput.addEventListener('submit' , async (e) => {
   e.preventDefault();
-  validateInputlogin();
+const nameInput = document.getElementById('name').value;
+const usernameInput = document.getElementById('uname').value;
+const passwordInput = document.getElementById('pass').value;
+const confirmInput = document.getElementById('Confirm').value;
+validateInputlogin();
+try {
+  const result = await fetch('https://my-brand-o2aa.onrender.com/api/v1/auth/signUp', {
+    method: "POST",
+    headers: {
+      "Content-Type" : "application/json"
+    },
+    body: JSON.stringify({
+      name:nameInput,
+      UserName: usernameInput,
+      Password: passwordInput
+    })
+     
+    
+  })
+  const data = await result.json();
+  
+  console.log(data);
+  window.location = 'loginPage.html';
+  alert("The account created successfully")
+}
+
+catch (error) {
+console.log(error);
+}
+  
 });
 
 function validateInputlogin() {
+  const nameInput = document.getElementById('name');
+const usernameInput = document.getElementById('uname');
+const passwordInput = document.getElementById('pass');
+const confirmInput = document.getElementById('Confirm');
     
     let password = passwordInput.value.trim();
     let username = usernameInput.value.trim();
@@ -64,24 +96,70 @@ function validateInputlogin() {
     }
 
       else{
-        alert("The account created successfully")
+        // alert("The account created successfully")
       if(localStorage.getItem('autho') == null){
         localStorage.setItem('autho', '[]')
-      }
-      var savInfo = JSON.parse(localStorage.getItem('autho'))
-      savInfo.push({'name': name, 'username':username, 'password': password})
-      localStorage.setItem('autho', JSON.stringify(savInfo))
+      }}
 
-       window.location = 'loginPage.html';
-       alert("The account created successfully")
 
+      // var savInfo = JSON.parse(localStorage.getItem('autho'))
+      // savInfo.push({'name': name, 'username':username, 'password': password})
+      // localStorage.setItem('autho', JSON.stringify(savInfo))
+
+      // let usrInfo = {
+      //   name: nameInput,
+      //   UserName: usernameInput,
+      //   Password: passwordInput
+      // }
+
+      // console.log(usrInfo)
+
+      // const option ={
+      //   method: "POST",
+      //   header: {
+      //     "Content-Type": "application/json"
+      //   },
+      //   body: JSON.stringify(usrInfo)
+      // }
+        
+
+// async function createAcc(){
+// const account = await fetch('http://localhost:8000/api/v1/auth/signUp', {
+//   method: "POST",
+//   header: {
+//     "Content-Type": "application/json"
+//   },
+//   // body: JSON.stringify({
+//   //   name: nameInput.value,
+//   //   UserName: usernameInput.value,
+//   //   Password: passwordInput.value
+//   // })
+// })
+// // .then(data => {console.log(usrInfo)})
+// // .then(usrInfo => console.log(usrInfo))
+// console.log(account)
+// if(account.status == 201){
+//   window.location = 'loginPage.html';
+//   alert("The account created successfully")
+// }else{
+//   console.error();
+// }
+
+
+//   }
+
+  // createAcc()
   }
-  }
+
+
+// }
+
+
  function setErrorF(input, message){
   const frmcontrol = input.parentElement;
-  const small = frmcontrol.querySelector('small');
+  const small = frmcontrol.querySelector('small')
   small.innerText=message;
-  frmcontrol.className = "formcontrol check";
+  frmcontrol.className = "formcontrol chick";
  }
  function setSuccess(input, message){
     const frmcontrol = input.parentElement;
