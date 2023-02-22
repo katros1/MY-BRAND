@@ -10,6 +10,14 @@ let params = (new URL(document.location)).searchParams;
       const Like = document.querySelector('.Likes');
       Like.className = "Likes ";
      }
+
+     window.addEventListener("load", ()=>{
+      const loader = document.querySelector(".center")
+      loader.classList.add("loader-hiden")
+      loader.addEventListener("transitionend", () =>{
+      document.body.removeChild("center");
+      })
+   })
     
 
  function blogPost(){

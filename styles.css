@@ -50,6 +50,7 @@ header{
 }
 .show-nav{
     height: 100%;
+    width: 100%;
     overflow: visible;
 }
 .aside-wrapper{
@@ -75,8 +76,8 @@ header{
     text-decoration: none;
 }
 .logo img{
-    width: 170px;
-    height: 145px;
+    width: 45px;
+    height: auto;
 }
 .logo span{
     font-size: 1.7rem;
@@ -142,6 +143,10 @@ header{
     letter-spacing: -3px;
     position: relative;
 }
+
+.text-zone h1:hover{
+    color:#08fdd8
+}
 .text-zone h1::before{
     content: '';
     position: absolute;
@@ -164,7 +169,7 @@ header{
 }
 .text-zone img{
     width: 35px;
-    height: 60px;
+    height: 40px;
 }
 .text-zone .gray-text{
     margin-top: 30px;
@@ -176,6 +181,7 @@ header{
 
 /* contact me button */
 .contact-button{
+    margin: 50px 0 0;
     text-decoration: none;
     width: 100%;
     max-width: 200px;
@@ -379,7 +385,7 @@ header{
 }
 .post-articles{
     width: 100%;
-    height: 250px;
+    height: 320px;
     background-color: #1d1d1d;
     padding: 25px;
     color: #909096;
@@ -529,11 +535,12 @@ header{
     font-size: 16px;
     line-height: 1.5rem;
   }
-.homeImg img{
+.homeImg {
     width: 30%;
     position: absolute;
     right: 100px;
     top: 300px;
+    visibility: hidden;
 }
 .back-big{
     font-size:  25rem;
@@ -638,7 +645,7 @@ header{
     overflow: hidden;
     transition:  all .3s ease-in-out;
 }
-.contact-button2 span.bg{
+.contact-button2 span.bg1{
     position: absolute;
     width: 0%;
     height: 100%;
@@ -649,10 +656,10 @@ header{
     transform: skewX(-19deg);
     
 }
-.contact-button2:hover span.bg{
+.contact-button2:hover span.bg1{
     width: 110%;
 }
-.contact-button2 span.base{
+.contact-button2 span.base1{
     width: 100%;
     height: 100%;
     position: absolute;
@@ -661,7 +668,7 @@ header{
     box-sizing: border-box;
     border-radius: 10px;
 }
-.contact-button2 span.text{
+.contact-button2 span.text1{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -669,7 +676,7 @@ header{
     left: 0;
     
 }
-.contact-button2:hover span.text{
+.contact-button2:hover span.text1{
     color: #1d1d1d;
 }
 
@@ -736,8 +743,8 @@ header{
         letter-spacing: -6px;
     }
     .text-zone img{
-        width: 50px;
-        height: 72px;
+        width: 55px;
+        height: 82px;
     }
     .text-zone .gray-text{
         font-size: 1rem;
@@ -749,6 +756,14 @@ header{
     .scroll-down--left{
         left: 110px;
         right: auto;
+    }
+
+    .homeImg img{
+        width: 90%;
+        position: absolute;
+        right: 40px;
+        top: 30px;
+        visibility: visible;
     }
     /* part 2 media query bigger screens starts here */
     #section-work{
@@ -794,7 +809,9 @@ header{
         font-size: 3rem;
     }
     .text-zone3 p{
-        width: 400px;
+        width: 80%;
+        margin: 20px 30px 20px;
+        left: 0%;
     }
     .skills-charts{
         margin-right: 20%;
@@ -815,7 +832,7 @@ header{
         flex-flow: row wrap;
     }
 
-    .bg{
+    .blg{
         margin-left:130px;
     }
 

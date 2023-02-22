@@ -3,10 +3,16 @@ const Uname = document.querySelector('.Usrfrom1')
 const Uemail = document.querySelector('.Usrform3')
 const refreshBttn = document.querySelector('.refresh')
 const deleteBttn  = document.querySelector('mblogButton2')
+const logoutButtn = document.getElementById('Logout1')
 
+logoutButtn.addEventListener('click', ()=>{
+    localStorage.setItem('token', '')
+})
 function update(){
     var usr = JSON.parse(localStorage.getItem('comment'))
-
+    const loader = document.querySelector(".center")
+    loader.classList.add("loader-hiden");
+    
     fetch('https://my-brand-o2aa.onrender.com/api/v1/comments')
     .then(res => {
         return res.json();

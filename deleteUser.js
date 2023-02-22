@@ -7,6 +7,15 @@ async function deleteItem (id){
       
     if(deleted.status == 200){
         window.location.reload(); 
+
+        window.addEventListener("load", ()=>{
+            const loader = document.querySelector(".center")
+            loader.classList.add("loader-hiden")
+            loader.addEventListener("transitionend", () =>{
+            document.body.removeChild("center");
+            })
+         })
+         
     }else {
         console.error();
     }

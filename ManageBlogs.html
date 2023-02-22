@@ -7,6 +7,7 @@
         <script src="https://kit.fontawesome.com/ea32ac11c6.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="styles2.css">
+        <link rel="stylesheet" href="style-loadingspinner.css">
         <link rel="icon" href="img\logo.png" type="image/x-icon">
     </head> 
     <body onload="updateBlogs()">
@@ -23,7 +24,7 @@
         <aside class="aside">
             <div class="aside-wrapper">
                 <div class="logo-section">
-                    <a class="logo" rel="home" href="index.html">
+                    <a class="logo" rel="home" href="dashboard.html">
                         <img src="img/logo.png" alt="logo" >
                         <span></span>
                     </a>
@@ -60,7 +61,7 @@
         </aside>
         <div class="topRightCorner1">
             <div class="RoundedCircle1">K</div>
-            <a href="HomePage.html" id="Logout1">Logout   <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            <a href="index.html" id="Logout1">Logout   <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </div>
 
 
@@ -71,7 +72,10 @@
 
         <div class="dashform" id="dashf">
          </div>
-        
+         <div class="center">
+            <div class="ring"></div>
+            <span>Loading...</span>
+        </div>
        
     <a href="CreateBlogPage.html"><div><button class="Newblog">Upload</button></div></a>  
      

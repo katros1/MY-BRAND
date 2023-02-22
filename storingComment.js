@@ -4,11 +4,16 @@
  const refreshBttn = document.querySelector('.refresh')
 const dashform = document.querySelector('.Cdashform')
  
+const logoutButtn = document.getElementById('Logout1')
 
+logoutButtn.addEventListener('click', ()=>{
+    localStorage.setItem('token', '')
+})
  function update(){
  
 //  var mssg = JSON.parse(localStorage.getItem('comment'))
-
+const loader = document.querySelector(".center")
+    loader.classList.add("loader-hiden");
  fetch('https://my-brand-o2aa.onrender.com/api/v1/comments')
     .then(res => {
         return res.json();
@@ -32,7 +37,7 @@ const dashform = document.querySelector('.Cdashform')
 
               if(infoBlog._id == mssg.blogId){
                 
-                let displayedMssg = `<div class="CQueryform"><section class="topsection"> <div class="qname">Name: ${nme}</div><div class="tel">Article: ${infoBlog.title}</div><div class="Email">Email: ${eml}</div><div class="qButton2"><a href = "mailto: ${eml}"><button class="QueryButton3">Reply</button></a></div></section><p class="commet">${cText}</p></div> <hr>`;
+                let displayedMssg = `<div class="CQueryform"><section class="topsection"> <div class="qname">Name: ${nme}</div><div class="tel">Article: ${infoBlog.title}</div><div class="Email">Email: ${eml}</div><div class="qButton2"><a href = "mailto: ${eml}"><button class="QueryButton3">Reply</button></a></div></section><p>${cText}</p></div> <hr>`;
            
                 dashform.innerHTML += displayedMssg
 

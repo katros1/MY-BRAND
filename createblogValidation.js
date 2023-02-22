@@ -28,7 +28,7 @@ const action = (navCondition) => {
 const aboutInput =document.getElementById('name')
 const titleInput = document.getElementById('subject')
 const formInput = document.getElementById('contact-form')
-const textfrla = document.getElementById('froala-editor')
+const textfrla = document.getElementById('edit')
 const uploadButton = document.querySelector('.contact-button2')
 const imgInput = document.getElementById('photo')
 
@@ -45,12 +45,17 @@ imgInput.addEventListener('change', (event) => {
 
    
 });
+const loader = document.querySelector(".center")
+  loader.classList.add("loader-hiden");
 
 formInput.addEventListener('submit' , async (e) => {
     e.preventDefault();
     
 
     // const img = e.target.files[0]
+
+    const token = JSON.parse(localStorage.getItem('token'))
+    console.log(token);
     const formData = new FormData();
 
     formData.append('title', titleInput.value)
@@ -61,7 +66,7 @@ formInput.addEventListener('submit' , async (e) => {
       const result = await fetch('https://my-brand-o2aa.onrender.com/api/v1/blogs', {
         method: "POST",
         headers: {
-          Authorization :'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieW91ciBuYW1lIiwiVXNlck5hbWUiOiJjaG9vc2UgcGFzc3dvcmQiLCJ1c2VySWQiOiI2M2ViZDNhNmU0N2MzODE0YjQ2NDU4MzQiLCJpYXQiOjE2NzY1NjQ2ODV9.oJiGp7X6JyUAKyDZ0pAcE7hbU7ne3SOTq_AI0QsE8vc'
+          Authorization :`Bearer ${token}`
         },
         body: formData,
         })
@@ -72,6 +77,9 @@ formInput.addEventListener('submit' , async (e) => {
       
       console.log(data);
       validate();
+      alert('Blog Uploaded successfully')
+
+      
     }
     
     catch (error) {
@@ -80,6 +88,18 @@ formInput.addEventListener('submit' , async (e) => {
     
   });
 
+
+
+
+  
+  // loader.addEventListener("transitionend", () =>{
+  //   document.body.removeChild("center");
+  //   })
+ 
+
+
+
+ 
 
   function validate() {
     let title = titleInput.value.trim();

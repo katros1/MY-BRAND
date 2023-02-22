@@ -1,6 +1,13 @@
 const blogSection = document.querySelector('.blog-articles');
 var blogs = JSON.parse(localStorage.getItem('blogs'));
- 
+
+window.addEventListener("load", ()=>{
+    const loader = document.querySelector(".center")
+    loader.classList.add("loader-hiden")
+    loader.addEventListener("transitionend", () =>{
+    document.body.removeChild("center");
+    })
+ })
 function postBlogs(){
 
     fetch('https://my-brand-o2aa.onrender.com/api/v1/blogs')

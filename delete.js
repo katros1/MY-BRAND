@@ -4,16 +4,24 @@ async function deleteItem(id){
 //     let index = post.findIndex(x => x.id ==id)
 //     post.splice(index,1);
 //     localStorage.setItem('blogs', JSON.stringify(post));
-
+const token = JSON.parse(localStorage.getItem('token'))
     const deleted = await fetch(`https://my-brand-o2aa.onrender.com/api/v1/blogs/${id}`, {
         method:'DELETE',
         headers:{
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieW91ciBuYW1lIiwiVXNlck5hbWUiOiJjaG9vc2UgcGFzc3dvcmQiLCJ1c2VySWQiOiI2M2ViZDNhNmU0N2MzODE0YjQ2NDU4MzQiLCJpYXQiOjE2NzY1NjQ2ODV9.oJiGp7X6JyUAKyDZ0pAcE7hbU7ne3SOTq_AI0QsE8vc'
+            Authorization: `Bearer ${token}`
         }
     })
       
     if(deleted.status == 200){
-        window.location.reload(); 
+        window.location.reload();
+        window.addEventListener("load", ()=>{
+            const loader = document.querySelector(".center")
+            loader.classList.add("loader-hiden")
+            loader.addEventListener("transitionend", () =>{
+            document.body.removeChild("center");
+            })
+         })
+          
     }else {
         console.error();
     }

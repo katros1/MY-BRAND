@@ -8,11 +8,12 @@ const formInput = document.getElementById('form');
 const textInput = document.getElementById('textAreaBlog2');
 const emailInput = document.getElementById('inputBox2');
 const frmInput = document.getElementById('contactBlog2');  
-
-
+const loader = document.querySelector(".center")
+loader.classList.add("loader-hiden")
 formInput.addEventListener('submit' , async (e) => {
   e.preventDefault();
   validateInputlogin();
+  loader.classList.remove("loader-hiden")
 
   try {
     const result = await fetch('https://my-brand-o2aa.onrender.com/api/v1/auth/login', {
@@ -28,11 +29,25 @@ formInput.addEventListener('submit' , async (e) => {
       
     })
     const data = await result.json();
+    console.log(result)
 
     userToken = data.token
     localStorage.setItem('token', JSON.stringify(userToken))
     console.log(data.token);
-     window.location = 'dashboard.html';
+
+    window.addEventListener("load", ()=>{
+      
+      loader.classList.add("loader-hiden")
+      loader.addEventListener("transitionend", () =>{
+      document.body.removeChild("center");
+      })
+   })
+  if(result.status == 200){
+    window.location = 'dashboard.html';
+  }else{
+    alert('Unauthorized User!!!!!!!!', result.status)
+  }
+    
   
   }
   

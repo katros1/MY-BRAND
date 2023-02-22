@@ -11,8 +11,11 @@ const nameInput = document.getElementById('name').value;
 const usernameInput = document.getElementById('uname').value;
 const passwordInput = document.getElementById('pass').value;
 const confirmInput = document.getElementById('Confirm').value;
-validateInputlogin();
+
 try {
+
+  
+
   const result = await fetch('https://my-brand-o2aa.onrender.com/api/v1/auth/signUp', {
     method: "POST",
     headers: {
@@ -29,8 +32,12 @@ try {
   const data = await result.json();
   
   console.log(data);
-  window.location = 'loginPage.html';
-  alert("The account created successfully")
+  if(result.status == 201){
+    validateInputlogin()
+    window.location = 'loginPage.html';
+    alert("The account created successfully")
+  }
+  
 }
 
 catch (error) {

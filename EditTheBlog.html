@@ -7,6 +7,7 @@
         <title>MY BRAND</title>
         <script src="https://kit.fontawesome.com/ea32ac11c6.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="style-loadingspinner.css">
         <link rel="icon" href="img\logo.png" type="image/x-icon">
         <link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
     </head> 
@@ -50,7 +51,7 @@
                 <div class="form-input-wrapper">
                   <div class="blogForm"> 
                     <div class="form-input-group">
-                      <input type="text" placeholder="add Image cloudinary link" name="name" class="photo" id="photo" />
+                      <input type="text" placeholder="Image cloudinary link will be add here" name="name" class="photo" id="photo" readonly/>
                       <span></span>
                     </div>
                     <small>Error message</small>
@@ -90,16 +91,22 @@
                   <div class="message"></div> 
                   <button type="submit" class="contact-button2 submit-button">
                     <div>
-                        <span class="bg"></span>
-                        <span class="base"></span>
-                        <span class="text">
-                          Upload Blog
+                        <span class="bg1"></span>
+                        <span class="base1"></span>
+                        <span class="text1">
+                          Update Blog
                         </span>
                       </div>
                     </button>
                     
                     
             </form>
+
+            <div class="center">
+              <div class="ring"></div>
+              <span>Loading...</span>
+          </div>
+
             <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>   
         <script src="EditNewValidation.js"></script>
 

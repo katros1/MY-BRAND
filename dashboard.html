@@ -7,6 +7,7 @@
         <title>MY BRAND</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="styles2.css">
+        <link rel="stylesheet" href="style-loadingspinner.css">
         <link rel="icon" href="img\logo.png" type="image/x-icon">
     </head> 
     <body>
@@ -27,6 +28,14 @@
                     <a href="ManageBlogs.html">Manage Blogs</a>
                     <a href="ManageUsers.html">Manage Users</a>
                 </nav>
+              <div class="lgout">
+
+                    <a href="index.html" id="lgt">
+                       Logout <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i>
+                    </a>
+                
+              </div>    
+                
                 
             </div>
         </aside>
@@ -67,8 +76,12 @@
             </div>
             <p class="copyRight">©Katros website.All rights reserved</p>
         </div>
+        <div class="center">
+            <div class="ring"></div>
+            <span>Loading...</span>
+        </div>
 
-        
+      <script src="loadingSpinner-functionality.js"></script>  
 
     </body>
 </html>

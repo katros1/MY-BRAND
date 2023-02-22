@@ -1,14 +1,22 @@
 const queryForm = document.querySelector('.dashform')
 const deleteQuery = document.getElementById('QueryButton2')
 
+
+const logoutButtn = document.getElementById('Logout1')
+
+logoutButtn.addEventListener('click', ()=>{
+    localStorage.setItem('token', '')
+})
+
      function displayQuery(){
 
     var queries = JSON.parse(localStorage.getItem('Query'));
-
+    const token = JSON.parse(localStorage.getItem('token'))
+    console.log(token)
 
   fetch('https://my-brand-o2aa.onrender.com/api/v1/messages', {
         headers:{ 
-        Authorization :'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieW91ciBuYW1lIiwiVXNlck5hbWUiOiJjaG9vc2UgcGFzc3dvcmQiLCJ1c2VySWQiOiI2M2ViZDNhNmU0N2MzODE0YjQ2NDU4MzQiLCJpYXQiOjE2NzY1NjQ2ODV9.oJiGp7X6JyUAKyDZ0pAcE7hbU7ne3SOTq_AI0QsE8vc'}})
+        Authorization :`Bearer ${token}`}})
 
 
 
@@ -46,6 +54,16 @@ const deleteQuery = document.getElementById('QueryButton2')
         
         console.log(data)})
 
+        const loader = document.querySelector(".center")
+        loader.classList.add("loader-hiden");
+
+//  window.addEventListener("load", ()=>{
+//     const loader = document.querySelector(".center")
+//     loader.classList.add("loader-hiden")
+//     loader.addEventListener("transitioned", () =>{
+//     document.body.removeChild("center");
+//     })
+//  })
 
 //     for(i=0 ; i <queries.length ; i++){
 

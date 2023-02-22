@@ -28,9 +28,17 @@ const action = (navCondition) => {
 const aboutInput =document.getElementById('name')
 const titleInput = document.getElementById('subject')
 const formInput = document.getElementById('contact-form')
-const textfrla = document.getElementById('froala-editor')
+const textfrla = document.getElementById('edit')
 const uploadButton = document.querySelector('.contact-button2')
 const imgInput = document.getElementById('photo')
+
+window.addEventListener("load", ()=>{
+  const loader = document.querySelector(".center")
+  loader.classList.add("loader-hiden")
+  loader.addEventListener("transitionend", () =>{
+  document.body.removeChild("center");
+  })
+})
 
 // imgInput.addEventListener('change', (event) => {
 //     const img = event.target.files[0];
@@ -77,12 +85,13 @@ fetch('https://my-brand-o2aa.onrender.com/api/v1/blogs')
 
 formInput.addEventListener('submit' ,async (e) => {
     e.preventDefault();
+    const token = JSON.parse(localStorage.getItem('token'));
     try {
       const result = await fetch(`https://my-brand-o2aa.onrender.com/api/v1/blogs/${name}`, {
         method: "PATCH",
         headers: {
           "Content-Type" : "application/json",
-          Authorization :'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoieW91ciBuYW1lIiwiVXNlck5hbWUiOiJjaG9vc2UgcGFzc3dvcmQiLCJ1c2VySWQiOiI2M2ViZDNhNmU0N2MzODE0YjQ2NDU4MzQiLCJpYXQiOjE2NzY1NjQ2ODV9.oJiGp7X6JyUAKyDZ0pAcE7hbU7ne3SOTq_AI0QsE8vc'
+          Authorization :`Bearer ${token}`
         },
         body: JSON.stringify({
           title: titleInput.value,
@@ -97,6 +106,7 @@ formInput.addEventListener('submit' ,async (e) => {
       
       console.log(data);
       validate();
+      alert(data.message)
     }
     
     catch (error) {
@@ -125,6 +135,10 @@ formInput.addEventListener('submit' ,async (e) => {
     } 
     else {
 
+      titleInput.value = ''
+       editor.html.set('')
+       imgInput.value = ''
+
       uploadButton.addEventListener('click' , function upload(e){         //storing blog info
    
 
@@ -138,9 +152,7 @@ formInput.addEventListener('submit' ,async (e) => {
         // myBlogs.push({'title':titleInput.value, 'body':textfrla.value, 'image': retriveImage  });
         // localStorage.setItem('blogs' ,JSON.stringify(myBlogs));
   
-       titleInput.value = ''
-       editor.html.set('')
-       imgInput.value = ''
+       
   
   })
     }
