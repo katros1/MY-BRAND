@@ -2,7 +2,39 @@ const textInput = document.getElementById('textAreaBlog2');
 const emailInput = document.getElementById('inputrectBlog2');
 const frmInput = document.getElementById('contactBlog2'); 
 const nameInput = document.getElementById('inputrectBlog1');
+const commentDis = document.querySelector('.commentDisplay')
 
+
+
+
+
+fetch('https://my-brand-o2aa.onrender.com/api/v1/comments')
+.then(res => {
+  return res.json();
+})
+.then(data => {
+    let datas = data.Comment
+  console.log(datas)
+
+  let params = (new URL(document.location)).searchParams;
+    let name = params.get('id')
+  datas.forEach(comment => {
+
+    if(comment.blogId == name){
+
+      let post = `<div class="CQueryfrm"><section class="topsection"> <div class="qname">Name: ${comment.name}</div></section><p>${comment.comment}</p></div>`
+ 
+      commentDis.innerHTML += post; 
+      
+    }
+  
+ 
+  
+
+
+})
+  
+})
 
 frmInput.addEventListener('submit' , async (e) => {
     e.preventDefault();
@@ -28,6 +60,7 @@ frmInput.addEventListener('submit' , async (e) => {
       
       console.log(data);
       alert("'comment sent to Author. Thank you!'")
+      window.location.reload()
     }
     
     catch (error) {
@@ -54,6 +87,7 @@ frmInput.addEventListener('submit' , async (e) => {
       storeComment(); 
       emailInput.value = ''
       textInput.value = ''
+      nameInput.value = ''
      
   }
     
@@ -116,6 +150,9 @@ async function storeComment(){
 
 
  }
+
+
+
 
   
   function setErrorLn(input, message){

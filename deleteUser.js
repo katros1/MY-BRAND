@@ -23,11 +23,11 @@ async function deleteItem (id){
 
 
 
-    let post = JSON.parse(localStorage.getItem("blogs"));
-    let index = post.findIndex(x => x.id ==id)
-    post.splice(index,1);
-    localStorage.setItem('comment', JSON.stringify(post));
-    window.location.reload();
+//     let post = JSON.parse(localStorage.getItem("blogs"));
+//     let index = post.findIndex(x => x.id ==id)
+//     post.splice(index,1);
+//     localStorage.setItem('comment', JSON.stringify(post));
+//     window.location.reload();
 }
 
 

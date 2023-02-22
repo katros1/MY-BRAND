@@ -1733,6 +1733,26 @@ box-shadow: 0 0  5px 5px #191919;
    font-size: 10px;
 }
 
+.CQueryfrm{
+   height: 90px;
+   position: relative;
+   
+
+
+}
+.CQueryfrm p{
+  position: absolute;
+   top: 45px;
+   left: 5px;
+   width: 400px;
+   font-size: 15px;
+   margin-left: 10px;
+}
+
+.CQueryfrm .qname{
+   font-size: 17px;
+   
+}
 .qButton2{
    display: inline;
    position: absolute;
@@ -3701,10 +3721,18 @@ box-shadow: 0 0  5px 5px #191919;
    margin-top: 5px;
    justify-content: center;
    
-   
-   
-   
-   
+ }
+
+ .commentDisplay{
+   border-top: 2px solid#81D8F7;
+   border: 1px solid rgb(240, 240, 150);
+   border-radius: 15px;
+   width:100%;
+   position: relative;
+   min-height: 5px;
+   top: 50px;
+
+
  }
 
  .blog-article  img{
@@ -3749,8 +3777,15 @@ box-shadow: 0 0  5px 5px #191919;
  .Likes i{
    font-size: 40px;
    border-color:#08fdd8
+
 }
 
+
+
+.Likes  .fa-comment{
+   margin-left: 10px;
+   color: #08fdd8;
+}
 .Like i{
    font-size: 50px;
    color:#08fdd8
@@ -3871,4 +3906,6 @@ box-shadow: 0 0  5px 5px #191919;
    .lgout a:hover{
       color: #08fdd8;
    }
+
+   
 }

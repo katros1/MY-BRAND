@@ -44,7 +44,8 @@ let params = (new URL(document.location)).searchParams;
 
       blogDisplay = `<h1>${datas.title}</h1>
         <img src="${datas.Image}">
-      <p>${datas.content}</p>  <div class="Likes"><i class="fa-solid fa-thumbs-up"></i>${datas.blogLikes.length} Like</div>`;
+      <p>${datas.content}</p>  <div class="Likes"><i class="fa-solid fa-thumbs-up"></i>${datas.blogLikes.length} Like <i class="fa-solid fa-comment"></i>  ${datas.blogComments
+        .length} Comments</div>`;
       // blogDiv.innerHTML = `<h1>${datas.title}</h1>
       //   <img src="${datas.Image}">
       // <p>${datas.content}</p>`;
