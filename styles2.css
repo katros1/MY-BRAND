@@ -2744,10 +2744,10 @@ box-shadow: 0 0  5px 5px #191919;
             margin-left: 0%;
     }
     .simg{  
-        left: 750px;
+        left: 800px;
         top:60px;   
-        width: 500px;
-            height: 450px;
+        width: 20%;
+       height: 300px;
     }
     .about{
             left: 200px;
