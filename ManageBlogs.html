@@ -10,7 +10,9 @@
         <link rel="stylesheet" href="style-loadingspinner.css">
         <link rel="icon" href="img\logo.png" type="image/x-icon">
     </head> 
-    <body onload="updateBlogs()">
+    <body>
+
+        <!-- onload="updateBlogs()" -->
         <header>
             <div>
                 <div class="btns-container">
@@ -81,7 +83,12 @@
      
     <!-- <div class="copyRight2"><p>©Katros website.All rights reserved</p>    -->
         <!-- </div></div> -->
-    <script src="functionality.js"></script>
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script type="text/babel"  src="reactStoringBlogs.js"></script>    
+    <!-- <script src="functionality.js"></script> -->
     <script src="storingArticles.js"></script>
     <script src="delete.js"></script>
     <script src="EditBlog.js"></script>

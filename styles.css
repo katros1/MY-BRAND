@@ -255,12 +255,12 @@ header{
     display: inline-block;
     animation: scroll .5s linear infinite alternate-reverse;
 }
-@keyframes scroll{
+@keyframes  bounce{
     0%{
-        transform: translateX(-7px);
+        transform: rotate(0deg);
     }
     100%{
-        transform: translateX(7px);
+        transform: rotate(360deg);
     }
 }
 .scroll-down .fas{
@@ -391,11 +391,14 @@ header{
     color: #909096;
     box-shadow: 0 0  5px 5px #191919;
     margin-bottom: 30px;
+    animation-name:  bounce;
+    animation-duration: 5s;
 }
-.post-date{
+.post-category{
     font-size: 14px;
     letter-spacing: 3px;
     text-transform: uppercase;
+    color:#81D8F7;
 }
 .blog-post-title h5 a{
     font-size: 1.5rem;
@@ -404,9 +407,23 @@ header{
     display: block;
     margin: 15px 0;
 }
+
+.blog-post-title h5{
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    margin: 15px 0;
+}
+
 .blog-post-title h5 a:hover{
     color: #06b99e;
 }
+
+.blog-post-title h5:hover{
+    color: #06b99e;
+}
+
 /* contact section starts here. The Final Part */
 .header {
     margin-bottom: 30px;
@@ -850,10 +867,16 @@ header{
         margin-left: 500px;
     }
     .post-articles{
+        border-top: 2px solid#81D8F7;
         width: 340px;
         height: 300px;
     }
     .blog-post-title h5 a{
+        font-size: 1.7rem;
+        line-height: 2rem;
+    }
+
+    .blog-post-title h5{
         font-size: 1.7rem;
         line-height: 2rem;
     }
